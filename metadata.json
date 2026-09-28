@@ -1,0 +1,7 @@
+{
+  "name": "Grantzunun Web",
+  "description": "Sitio web oficial y landing page de El Gran T´Zunun - Parque de Naturaleza y Aventura en la Selva con reservaciones directas a WhatsApp.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
