@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064e3b"/>
+      <stop offset="40%" stop-color="#065f46"/>
+      <stop offset="75%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="65%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#fef3c7" stop-opacity="0.8"/>
+      <stop offset="25%" stop-color="#fde68a" stop-opacity="0.4"/>
+      <stop offset="60%" stop-color="#34d399" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#064e3b" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="jungleFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#064e3b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="jungleMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="jungleFore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#011913"/>
+    </linearGradient>
+    <linearGradient id="cableGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+  </defs>
+
+  <!-- Sky Base -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)"/>
+  <circle cx="1250" cy="320" r="450" fill="url(#sunGlow)"/>
+
+  <!-- Sun Rays -->
+  <polygon points="1250,320 600,1080 800,1080" fill="#fef3c7" opacity="0.08"/>
+  <polygon points="1250,320 950,1080 1150,1080" fill="#fef3c7" opacity="0.12"/>
+  <polygon points="1250,320 1350,1080 1550,1080" fill="#fef3c7" opacity="0.09"/>
+
+  <!-- Distant Jungle Ridge & Canopy (Layer 1) -->
+  <path d="M0,620 Q240,540 480,590 T960,560 T1440,580 T1920,530 L1920,1080 L0,1080 Z" fill="url(#jungleFar)" opacity="0.85"/>
+
+  <!-- Midground Canopy (Layer 2) with Tree Silhouettes -->
+  <path d="M0,720 Q200,640 400,690 T800,660 T1200,680 T1600,640 T1920,690 L1920,1080 L0,1080 Z" fill="url(#jungleMid)"/>
+  
+  <!-- Palms & Rainforest Trees (Midground) -->
+  <g fill="#034b35" opacity="0.9">
+    <!-- Palm Cluster 1 -->
+    <path d="M220,740 Q250,560 320,460 Q280,480 230,520 Q280,450 360,450 Q320,490 310,540 Q380,470 410,510 Q360,540 330,580 Q340,680 320,760 Z"/>
+    <!-- Tree Mass Left -->
+    <circle cx="120" cy="710" r="140"/>
+    <circle cx="280" cy="700" r="110"/>
+    <circle cx="450" cy="730" r="130"/>
+    <!-- Tree Mass Right -->
+    <circle cx="1500" cy="690" r="160"/>
+    <circle cx="1700" cy="670" r="140"/>
+    <circle cx="1850" cy="680" r="150"/>
+  </g>
+
+  <!-- Foreground Canopy (Layer 3) -->
+  <path d="M0,820 Q300,750 600,810 T1200,780 T1800,820 L1920,840 L1920,1080 L0,1080 Z" fill="url(#jungleFore)"/>
+
+  <!-- Giant Foreground Tropical Leaves / Vines on Edges -->
+  <g fill="#01241b">
+    <!-- Left Huge Palm Leaves -->
+    <path d="M-40,200 Q200,280 380,480 Q220,400 60,340 Q240,430 330,600 Q180,500 -20,460 Z"/>
+    <path d="M-60,500 Q180,580 340,780 Q160,720 -40,700 Z"/>
+    <!-- Right Big Tropical Fronds -->
+    <path d="M1960,180 Q1720,270 1540,470 Q1700,390 1860,330 Q1680,420 1590,590 Q1740,490 1940,450 Z"/>
+  </g>
+
+  <!-- Zipline Steel Cable spanning across the scene -->
+  <path d="M-100,160 Q800,480 2020,380" stroke="url(#cableGrad)" stroke-width="6" fill="none" opacity="0.85"/>
+  <path d="M-100,162 Q800,482 2020,382" stroke="#fef08a" stroke-width="2" fill="none" opacity="0.9"/>
+
+  <!-- Adventurer on Zipline (Center Stage) -->
+  <g transform="translate(1020, 365) scale(0.95)">
+    <!-- Pulley / Trolley on Cable -->
+    <rect x="-35" y="-18" width="70" height="24" rx="6" fill="#f59e0b"/>
+    <circle cx="-16" cy="-6" r="10" fill="#1e293b"/>
+    <circle cx="16" cy="-6" r="10" fill="#1e293b"/>
+    <circle cx="-16" cy="-6" r="4" fill="#94a3b8"/>
+    <circle cx="16" cy="-6" r="4" fill="#94a3b8"/>
+    <path d="M0,6 L-10,40 L10,40 Z" fill="#b45309"/>
+
+    <!-- Carabiners & Straps -->
+    <line x1="-8" y1="40" x2="-14" y2="75" stroke="#f59e0b" stroke-width="5"/>
+    <line x1="8" y1="40" x2="14" y2="75" stroke="#f59e0b" stroke-width="5"/>
+
+    <!-- Adventurer Silhouette with Highlight Details -->
+    <!-- Helmet -->
+    <path d="M-18,72 Q-2,54 18,72 Q24,90 14,94 L-14,94 Q-24,88 -18,72 Z" fill="#22c55e"/>
+    <!-- Head / Face Profile -->
+    <circle cx="0" cy="88" r="15" fill="#f8fafc"/>
+    <path d="M8,85 Q16,88 12,96 L4,95 Z" fill="#f8fafc"/>
+
+    <!-- Body / Torso with Adventure Shirt & Harness -->
+    <path d="M-22,102 Q0,98 24,102 L30,170 Q0,185 -24,170 Z" fill="#006948"/>
+    <!-- Harness Straps -->
+    <line x1="-16" y1="102" x2="18" y2="165" stroke="#f59e0b" stroke-width="4"/>
+    <line x1="16" y1="102" x2="-18" y2="165" stroke="#f59e0b" stroke-width="4"/>
+    <rect x="-24" y="160" width="50" height="12" rx="3" fill="#b45309"/>
+
+    <!-- Arms Holding the Handlebars / Cables -->
+    <path d="M-18,105 Q-35,70 -12,42" stroke="#f8fafc" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <path d="M18,105 Q35,70 12,42" stroke="#f8fafc" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <circle cx="-12" cy="40" r="7" fill="#22c55e"/>
+    <circle cx="12" cy="40" r="7" fill="#22c55e"/>
+
+    <!-- Legs Flying Backwards with Thrill -->
+    <path d="M-16,170 Q-45,210 -85,225" stroke="#0f172a" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <path d="M14,170 Q-20,225 -65,255" stroke="#1e293b" stroke-width="12" stroke-linecap="round" fill="none"/>
+    <!-- Shoes / Boots -->
+    <path d="M-85,225 L-105,220 L-100,235 Z" fill="#f59e0b"/>
+    <path d="M-65,255 L-85,252 L-80,265 Z" fill="#f59e0b"/>
+  </g>
+
+  <!-- Tropical Birds Silhouettes Soaring in Distance -->
+  <g fill="#022c22" opacity="0.75">
+    <path d="M680,260 Q695,245 710,260 Q725,245 740,260 Q725,252 710,266 Q695,252 680,260 Z"/>
+    <path d="M730,220 Q742,208 755,220 Q768,208 780,220 Q768,214 755,225 Q742,214 730,220 Z"/>
+    <path d="M820,270 Q830,258 840,270 Q850,258 860,270 Q850,264 840,274 Q830,264 820,270 Z"/>
+  </g>
+</svg>

@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <!-- Morning Jungle Sky Gradient -->
+    <linearGradient id="morningSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#022c22"/>
+      <stop offset="35%" stop-color="#064e3b"/>
+      <stop offset="70%" stop-color="#0f766e"/>
+      <stop offset="90%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#fde047"/>
+    </linearGradient>
+
+    <!-- River Gradient -->
+    <linearGradient id="riverGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#14b8a6"/>
+      <stop offset="50%" stop-color="#2dd4bf"/>
+      <stop offset="100%" stop-color="#0d9488"/>
+    </linearGradient>
+
+    <!-- Wooden Trail Gradient -->
+    <linearGradient id="trailGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#d97706"/>
+      <stop offset="50%" stop-color="#b45309"/>
+      <stop offset="100%" stop-color="#78350f"/>
+    </linearGradient>
+
+    <!-- Forest Ridges -->
+    <linearGradient id="ridgeFar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#047857"/>
+      <stop offset="100%" stop-color="#022c22"/>
+    </linearGradient>
+    <linearGradient id="ridgeMid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#065f46"/>
+      <stop offset="100%" stop-color="#011e17"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Sky Base -->
+  <rect width="1920" height="1080" fill="url(#morningSky)"/>
+
+  <!-- Morning Sun Rise Glow -->
+  <circle cx="960" cy="560" r="280" fill="#fef08a" opacity="0.45"/>
+  <circle cx="960" cy="560" r="140" fill="#ffffff" opacity="0.6"/>
+
+  <!-- Sun Rays Through Canopy -->
+  <polygon points="960,560 300,1080 500,1080" fill="#fef9c3" opacity="0.12"/>
+  <polygon points="960,560 750,1080 950,1080" fill="#fef9c3" opacity="0.18"/>
+  <polygon points="960,560 1200,1080 1450,1080" fill="#fef9c3" opacity="0.15"/>
+  <polygon points="960,560 1600,1080 1850,1080" fill="#fef9c3" opacity="0.1"/>
+
+  <!-- Far Jungle Mountain Ridge -->
+  <path d="M0,580 Q320,510 640,550 T1280,530 T1920,500 L1920,1080 L0,1080 Z" fill="url(#ridgeFar)" opacity="0.8"/>
+
+  <!-- Midground Hills & Palms -->
+  <path d="M0,660 Q400,600 800,640 T1600,620 T1920,650 L1920,1080 L0,1080 Z" fill="url(#ridgeMid)"/>
+
+  <!-- Meandering Jungle River -->
+  <path d="M960,650 Q850,750 920,840 T780,1080 L1140,1080 Q1060,920 1080,820 T1040,650 Z" fill="url(#riverGrad)" opacity="0.85"/>
+
+  <!-- Winding Trail & Bike Path -->
+  <path d="M600,720 Q700,760 620,850 T450,1080 L620,1080 Q760,940 780,820 T680,720 Z" fill="url(#trailGrad)" opacity="0.9"/>
+
+  <!-- Wooden Bridge crossing over the River -->
+  <g transform="translate(860, 770)">
+    <!-- Bridge Planks -->
+    <rect x="-60" y="-10" width="220" height="20" rx="3" fill="#b45309" transform="rotate(-6)"/>
+    <line x1="-60" y1="-8" x2="160" y2="-28" stroke="#78350f" stroke-width="4"/>
+    <line x1="-60" y1="8" x2="160" y2="-12" stroke="#78350f" stroke-width="4"/>
+    <!-- Posts & Handrails -->
+    <line x1="-50" y1="-10" x2="-50" y2="-45" stroke="#92400e" stroke-width="5"/>
+    <line x1="0" y1="-15" x2="0" y2="-50" stroke="#92400e" stroke-width="5"/>
+    <line x1="50" y1="-20" x2="50" y2="-55" stroke="#92400e" stroke-width="5"/>
+    <line x1="100" y1="-25" x2="100" y2="-60" stroke="#92400e" stroke-width="5"/>
+    <line x1="150" y1="-30" x2="150" y2="-65" stroke="#92400e" stroke-width="5"/>
+    <line x1="-50" y1="-45" x2="150" y2="-65" stroke="#d97706" stroke-width="4"/>
+  </g>
+
+  <!-- Cyclist on Trail Silhouette -->
+  <g transform="translate(560, 880) scale(0.65)">
+    <!-- Bicycle Wheels -->
+    <circle cx="-50" cy="50" r="35" fill="none" stroke="#22c55e" stroke-width="6"/>
+    <circle cx="50" cy="50" r="35" fill="none" stroke="#22c55e" stroke-width="6"/>
+    <!-- Frame -->
+    <path d="M-50,50 L-10,50 L35,15 L-20,15 Z" fill="none" stroke="#16a34a" stroke-width="6"/>
+    <line x1="-10" y1="50" x2="35" y2="15" stroke="#16a34a" stroke-width="6"/>
+    <!-- Handlebar & Fork -->
+    <line x1="50" y1="50" x2="35" y2="15" stroke="#16a34a" stroke-width="6"/>
+    <line x1="35" y1="15" x2="30" y2="-5" stroke="#f8fafc" stroke-width="6"/>
+    <line x1="22" y1="-5" x2="38" y2="-5" stroke="#f8fafc" stroke-width="6"/>
+    <!-- Saddle -->
+    <line x1="-20" y1="15" x2="-25" y2="0" stroke="#16a34a" stroke-width="6"/>
+    <ellipse cx="-25" cy="0" rx="14" ry="4" fill="#0f172a"/>
+    <!-- Rider -->
+    <circle cx="0" cy="-45" r="14" fill="#f8fafc"/>
+    <path d="M-8,-52 Q12,-58 18,-45 L-12,-45 Z" fill="#22c55e"/> <!-- Helmet -->
+    <path d="M-12,-32 L15,-15 L-20,0 Z" fill="#006948"/> <!-- Torso -->
+    <!-- Arms -->
+    <line x1="10" y1="-25" x2="30" y2="-5" stroke="#f8fafc" stroke-width="6" stroke-linecap="round"/>
+    <!-- Legs -->
+    <path d="M-20,0 L0,20 L-10,50" fill="none" stroke="#1e293b" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Lush Foreground Tropical Canopy & Big Jungle Leaves -->
+  <g fill="#011e17">
+    <!-- Left Huge Palm Canopy -->
+    <path d="M-50,300 Q180,450 320,680 Q140,620 -50,600 Z"/>
+    <path d="M-80,600 Q150,720 380,950 Q120,900 -80,880 Z"/>
+    <path d="M0,900 Q250,850 450,1080 L0,1080 Z"/>
+    
+    <!-- Right Canopy -->
+    <path d="M1970,320 Q1740,460 1600,680 Q1780,610 1970,590 Z"/>
+    <path d="M2000,600 Q1750,720 1520,950 Q1800,900 2000,880 Z"/>
+    <path d="M1920,900 Q1680,850 1480,1080 L1920,1080 Z"/>
+  </g>
+
+  <!-- Birds Flocking towards Morning Sun -->
+  <g fill="#022c22" opacity="0.7">
+    <path d="M920,440 Q932,430 945,440 Q958,430 970,440 Q958,435 945,445 Q932,435 920,440 Z"/>
+    <path d="M960,400 Q970,392 980,400 Q990,392 1000,400 Q990,396 980,405 Q970,396 960,400 Z"/>
+    <path d="M1020,430 Q1030,422 1040,430 Q1050,422 1060,430 Q1050,426 1040,435 Q1030,426 1020,430 Z"/>
+  </g>
+</svg>

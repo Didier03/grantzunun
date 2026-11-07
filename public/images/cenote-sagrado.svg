@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <!-- Cavern Gradient Background -->
+    <linearGradient id="caveBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="40%" stop-color="#022c22"/>
+      <stop offset="70%" stop-color="#064e3b"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+
+    <!-- Turquoise Crystal Water Gradient -->
+    <linearGradient id="cenoteWater" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2dd4bf"/>
+      <stop offset="25%" stop-color="#14b8a6"/>
+      <stop offset="60%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#042f2e"/>
+    </linearGradient>
+
+    <!-- Golden Sunbeam Shaft -->
+    <linearGradient id="sunBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="0.85"/>
+      <stop offset="40%" stop-color="#99f6e4" stop-opacity="0.45"/>
+      <stop offset="85%" stop-color="#2dd4bf" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#0f766e" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="waterGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#a7f3d0" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#2dd4bf" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#042f2e" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Cavern Background -->
+  <rect width="1200" height="900" fill="url(#caveBg)"/>
+
+  <!-- Natural Cavern Opening to the Jungle Sky at Top -->
+  <path d="M420,0 Q600,90 780,0 Z" fill="#6ee7b7" opacity="0.9"/>
+  <ellipse cx="600" cy="30" rx="140" ry="40" fill="#fef9c3"/>
+
+  <!-- Heavenly Sunbeam descending into the water -->
+  <polygon points="520,30 680,30 840,650 360,650" fill="url(#sunBeam)"/>
+
+  <!-- Underground Water Pool -->
+  <path d="M0,580 Q300,550 600,560 T1200,580 L1200,900 L0,900 Z" fill="url(#cenoteWater)"/>
+
+  <!-- Glowing Water Impact Point from Sunbeam -->
+  <ellipse cx="600" cy="620" rx="260" ry="70" fill="url(#waterGlow)"/>
+
+  <!-- Concentric Water Ripples -->
+  <ellipse cx="600" cy="620" rx="180" ry="40" fill="none" stroke="#f0fdfa" stroke-width="2" opacity="0.6"/>
+  <ellipse cx="600" cy="620" rx="110" ry="24" fill="none" stroke="#f0fdfa" stroke-width="3" opacity="0.8"/>
+  <ellipse cx="600" cy="620" rx="50" ry="12" fill="#ffffff" opacity="0.9"/>
+
+  <!-- Submerged Rock Formations -->
+  <polygon points="200,900 320,720 440,900" fill="#034b35" opacity="0.6"/>
+  <polygon points="780,900 880,700 1020,900" fill="#034b35" opacity="0.6"/>
+
+  <!-- Cavern Arch & Limestone Stalactites (Hanging from top) -->
+  <g fill="#0b1320">
+    <!-- Top Left Cavern Wall -->
+    <path d="M0,0 L420,0 Q360,80 300,120 L260,280 L220,160 L180,360 L140,240 L80,480 L0,580 Z"/>
+    <!-- Top Right Cavern Wall -->
+    <path d="M1200,0 L780,0 Q840,80 900,140 L940,320 L980,180 L1040,400 L1080,260 L1140,500 L1200,580 Z"/>
+    
+    <!-- Stalactites -->
+    <polygon points="460,0 475,180 490,0"/>
+    <polygon points="505,0 515,110 525,0"/>
+    <polygon points="690,0 705,140 720,0"/>
+    <polygon points="735,0 750,210 765,0"/>
+  </g>
+
+  <!-- Hanging Jungle Vines & Sacred Roots descending to water -->
+  <g stroke="#065f46" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M380,60 Q400,240 370,420 T390,610"/>
+    <path d="M420,40 Q410,200 440,380 T410,590"/>
+    <path d="M720,50 Q750,220 710,400 T740,605"/>
+    <path d="M760,30 Q740,210 780,390 T760,580"/>
+    <!-- Little green vine leaves -->
+    <circle cx="375" cy="200" r="5" fill="#34d399" stroke="none"/>
+    <circle cx="395" cy="320" r="6" fill="#34d399" stroke="none"/>
+    <circle cx="380" cy="460" r="5" fill="#34d399" stroke="none"/>
+    <circle cx="730" cy="180" r="5" fill="#34d399" stroke="none"/>
+    <circle cx="720" cy="330" r="6" fill="#34d399" stroke="none"/>
+    <circle cx="745" cy="480" r="5" fill="#34d399" stroke="none"/>
+  </g>
+
+  <!-- Swimmer Silhouette enjoying the water -->
+  <g transform="translate(600, 605)">
+    <circle cx="0" cy="0" r="8" fill="#ffffff"/>
+    <path d="M-6,8 Q0,14 12,8 Q24,14 18,20 Q6,16 -6,14 Z" fill="#ffffff" opacity="0.9"/>
+    <!-- Water glow ring around swimmer -->
+    <ellipse cx="6" cy="12" rx="30" ry="10" fill="none" stroke="#99f6e4" stroke-width="2" opacity="0.8"/>
+  </g>
+</svg>

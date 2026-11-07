@@ -11,7 +11,7 @@ export function ConversionBanner() {
       {/* Background Image with Low Opacity */}
       <div className="absolute inset-0 pointer-events-none opacity-20">
         <Image
-          src="https://lh3.googleusercontent.com/aida/AEtjO1WCCBX4vMG0I170bDFSyJjFnuUFAd5TLFg-gndlRO-BwENh6kKDcGjf35eBf8F4V6juuIRfQ5qv5Ejya2Iuas2ZeqFhWgYZQoHgRh-hA7ZDZdcWxn9tYJq1GsToXk8dCZuCjYi4rCjlAPo_iI6IyEX1qy_wCTS5D7dHTt5BeCqMm042sbzEt9VLzXIv0dYKMxWsMvT_b_k9FU2kRcz3xz022Pb2y1gUBgGrqihkYZ6x1o238uzv0IYauPw"
+          src="/images/senderos-selva.svg"
           alt="Selva de El Gran T´Zunun"
           fill
           className="object-cover object-center"
