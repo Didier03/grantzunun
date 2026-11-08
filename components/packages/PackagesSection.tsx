@@ -12,7 +12,7 @@ export function PackagesSection() {
   );
 
   return (
-    <section className="w-full py-24 bg-white" id="paquetes">
+    <section className="w-full py-24 bg-white scroll-mt-24" id="paquetes">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
