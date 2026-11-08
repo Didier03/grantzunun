@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export function Footer() {
@@ -21,41 +22,59 @@ export function Footer() {
         </div>
 
         {/* Navigation & Social Links */}
-        <nav className="flex flex-wrap justify-center md:justify-end gap-6 text-sm font-medium text-neutral-700">
-          <a
-            href={getWhatsAppUrl("Hola, quisiera información de contacto y cómo llegar a El Gran T´Zunun.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#006948] transition-colors"
-          >
-            Contacto Directo
-          </a>
-          <a
-            href="https://maps.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#006948] transition-colors"
-          >
-            Ubicación
-          </a>
-          <a
-            href={getWhatsAppUrl("Hola, quiero seguir sus novedades y actividades.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#006948] transition-colors"
-          >
-            Instagram
-          </a>
-          <a
-            href={getWhatsAppUrl("Hola, los vi en Facebook y quiero saber más.")}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-[#006948] transition-colors"
-          >
-            Facebook
-          </a>
-        </nav>
+        <div className="flex flex-col items-center md:items-end gap-4">
+          <nav className="flex flex-wrap justify-center md:justify-end gap-5 text-sm font-medium text-neutral-700">
+            <Link href="/historia" className="hover:text-[#006948] transition-colors">
+              Historia del Gran T´Zunun
+            </Link>
+            <Link href="/reglamentos" className="hover:text-[#006948] transition-colors">
+              Reglamentos
+            </Link>
+            <Link href="/certificaciones" className="hover:text-[#006948] transition-colors">
+              Certificaciones
+            </Link>
+            <Link href="/convenios" className="hover:text-[#006948] transition-colors">
+              Convenios y Alianzas
+            </Link>
+          </nav>
+
+          <nav className="flex flex-wrap justify-center md:justify-end gap-6 text-xs font-medium text-neutral-500">
+            <a
+              href={getWhatsAppUrl("Hola, quisiera información de contacto y cómo llegar a El Gran T´Zunun.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#006948] transition-colors"
+            >
+              Contacto Directo
+            </a>
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#006948] transition-colors"
+            >
+              Ubicación
+            </a>
+            <a
+              href={getWhatsAppUrl("Hola, quiero seguir sus novedades y actividades.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#006948] transition-colors"
+            >
+              Instagram
+            </a>
+            <a
+              href={getWhatsAppUrl("Hola, los vi en Facebook y quiero saber más.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#006948] transition-colors"
+            >
+              Facebook
+            </a>
+          </nav>
+        </div>
       </div>
     </footer>
   );
 }
+
