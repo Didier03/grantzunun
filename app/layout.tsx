@@ -18,11 +18,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "El Gran T´Zunun - La Aventura Te Espera | Parque Natural",
-  description: "Descubre la aventura y la naturaleza en El Gran T´Zunun: tirolesas panorámicas, cenotes sagrados, hospedaje rústico, gastronomía maya y pasadías todo incluido en la selva.",
-  keywords: ["El Gran TZunun", "cenotes yucatan", "tirolesas maya", "parque aventura selva", "pasadias cancun merida", "glamping yucatan"],
+  description: "Descubre la aventura y la naturaleza en El Gran T´Zunun: tirolesas panorámicas, experiencias recreativas, actividades extremas, hospedaje rústico, gastronomía maya y pasadías todo incluido en la selva.",
+  keywords: [
+    "El Gran Tzunun", 
+    "Parque de naturaleza", 
+    "tirolesas", 
+    "juegos extremos", 
+    "turismo campeche", 
+    "Tzunun"
+  ],
   openGraph: {
     title: "El Gran T´Zunun - Parque de Naturaleza y Aventura",
-    description: "Tirolesas sobre la copa de los árboles, cenotes cristalinos milenarios y descanso idílico en el corazón verde de la península.",
+    description: "Tirolesas sobre la copa de los árboles, actividades exptremas y descanso idílico en el corazón verde de la península.",
+    url: "URL_DEL_DOMINIO_PENDIENTE", 
     locale: "es_MX",
     type: "website",
   },
