@@ -1,4 +1,4 @@
-import { ParkActivity, DayPassPackage, LodgingOption, GastronomyPillar } from "@/types";
+import { ParkActivity, DayPassPackage, LodgingOption, GastronomyPillar, ExperienceItem } from "@/types";
 
 export const PARK_INFO = {
   name: "El Gran T´Zunun",
@@ -91,6 +91,86 @@ export const ACTIVITIES: ParkActivity[] = [
     colSpan: "one-third",
     ctaText: "Consultar en WhatsApp",
     whatsappMessage: "Hola, quiero información de las rutas de senderismo y ciclismo de selva en El Gran T´Zunun.",
+  },
+];
+
+export const RECREATION_ACTIVITIES: ParkActivity[] = [
+  {
+    id: "hamacas-selva",
+    title: "Santuario de Hamacas & Lectura",
+    category: "Descanso Total",
+    categoryColor: "emerald",
+    description: "Relájate bajo la sombra de ceibas centenarias en nuestro pabellón de hamacas artesanales, acompañado por el sonido natural del viento y las aves.",
+    iconName: "Leaf",
+    colSpan: "one-third",
+    ctaText: "Consultar áreas de descanso",
+    whatsappMessage: "Hola, quiero información sobre las zonas de recreación y descanso en El Gran T´Zunun.",
+  },
+  {
+    id: "albercas-naturales",
+    title: "Espejos de Agua & Albercas Ecológicas",
+    category: "Recreación Familiar",
+    categoryColor: "secondary",
+    description: "Aguas cristalinas de manantial libres de químicos agresivos, con zonas de baja profundidad ideales para niños, familias y nado relajado.",
+    image: "/images/cenote-sagrado.svg",
+    colSpan: "two-thirds",
+    ctaText: "Ver opciones familiares",
+    whatsappMessage: "Hola, quiero información sobre las albercas naturales y recreación familiar en El Gran T´Zunun.",
+  },
+  {
+    id: "avistamiento-aves",
+    title: "Observación de Flora & Colibríes (T´Zunun)",
+    category: "Contemplación",
+    categoryColor: "tertiary",
+    description: "Recorridos pausados por jardines polinizadores y miradores silenciosos para fotografiar al colibrí maya y orquídeas endémicas.",
+    iconName: "Compass",
+    colSpan: "one-third",
+    ctaText: "Preguntar por recorridos",
+    whatsappMessage: "Hola, quiero información sobre avistamiento de aves y senderos contemplativos en El Gran T´Zunun.",
+  },
+  {
+    id: "picnic-palapas",
+    title: "Palapas Privadas & Convivencia",
+    category: "Espacios Abiertos",
+    categoryColor: "emerald",
+    description: "Áreas verdes con palapas frescas, juegos de mesa tradicionales y espacios tranquilos para desconectar del ritmo urbano.",
+    image: "/images/senderos-selva.svg",
+    colSpan: "two-thirds",
+    ctaText: "Reservar espacio familiar",
+    whatsappMessage: "Hola, me gustaría información sobre las palapas y áreas de convivencia en El Gran T´Zunun.",
+  },
+];
+
+export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "ceremonia-cacao",
+    title: "Ceremonia Ancestral del Cacao",
+    subtitle: "Conexión espiritual y tradición maya",
+    description: "Participa en la molienda tradicional en metate, conoce la cosmovisión maya detrás de la semilla sagrada y degusta una infusión ceremonial frente al cenote.",
+    duration: "90 min",
+    tag: "Cultura Viva",
+    iconName: "Sparkles",
+    whatsappMessage: "Hola, quiero información sobre la experiencia de Ceremonia Ancestral del Cacao en El Gran T´Zunun.",
+  },
+  {
+    id: "velada-estelar",
+    title: "Noche de Leyendas & Fogata Estelar",
+    subtitle: "Astronomía maya y relatos de la selva",
+    description: "Al caer el sol, la selva cobra otra vida. Disfruta de relatos tradicionales mayas alrededor del fuego, bombones asados y observación del cielo nocturno libre de contaminación lumínica.",
+    duration: "2 horas",
+    tag: "Experiencia Nocturna",
+    iconName: "Moon",
+    whatsappMessage: "Hola, quiero información sobre la Noche de Leyendas y Fogata Estelar en El Gran T´Zunun.",
+  },
+  {
+    id: "ruta-melipona",
+    title: "Santuario de la Abeja Melipona",
+    subtitle: "Conservación y miel sagrada sin aguijón",
+    description: "Descubre el fascinante mundo de la Xunán Kab (abeja maya sin aguijón), su importancia ecológica en la selva y realiza una cata de su miel medicinal.",
+    duration: "60 min",
+    tag: "Biodiversidad",
+    iconName: "HeartHandshake",
+    whatsappMessage: "Hola, quiero información sobre la experiencia del Santuario de la Abeja Melipona en El Gran T´Zunun.",
   },
 ];
 
@@ -229,3 +309,4 @@ export const GASTRONOMY_PILLARS: GastronomyPillar[] = [
     iconName: "Flame",
   },
 ];
+

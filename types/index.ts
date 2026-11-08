@@ -42,6 +42,17 @@ export interface GastronomyPillar {
   iconName: string;
 }
 
+export interface ExperienceItem {
+  id: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  duration: string;
+  tag: string;
+  iconName: string;
+  whatsappMessage: string;
+}
+
 export interface QuoteReservationParams {
   packageId?: string;
   adultsCount: number;
@@ -51,3 +62,4 @@ export interface QuoteReservationParams {
   clientName?: string;
   comments?: string;
 }
+

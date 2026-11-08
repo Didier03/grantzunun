@@ -4,7 +4,9 @@ import React, { useState } from "react";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { ActivitiesBento } from "@/components/activities/ActivitiesBento";
+import { RecreationSection } from "@/components/activities/RecreationSection";
 import { PackagesSection } from "@/components/packages/PackagesSection";
+import { ExperiencesSection } from "@/components/experiences/ExperiencesSection";
 import { LodgingSection } from "@/components/lodging/LodgingSection";
 import { GastronomySection } from "@/components/gastronomy/GastronomySection";
 import { ConversionBanner } from "@/components/cta/ConversionBanner";
@@ -25,11 +27,17 @@ export default function HomePage() {
         {/* Hero Section with Slider, Value Prop and Direct CTAs */}
         <HeroSection />
 
-        {/* Bento Grid: Extreme Activities, Sacred Cenote & Mayan Culture */}
+        {/* Bento Grid: Extreme Activities & Adventure */}
         <ActivitiesBento />
+
+        {/* Recreation & Relaxation Activities */}
+        <RecreationSection />
 
         {/* Transparent Rates & Day Pass Packages + Group Calculator */}
         <PackagesSection />
+
+        {/* Curated Cultural & Nature Experiences */}
+        <ExperiencesSection />
 
         {/* Eco Lodging: Rustic Cabins, Romantic Glamping & Camp Site */}
         <LodgingSection />
