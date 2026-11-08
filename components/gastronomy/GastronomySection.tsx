@@ -21,7 +21,7 @@ export function GastronomySection() {
   };
 
   return (
-    <section className="w-full py-20 bg-white" id="gastronomia">
+    <section className="w-full py-20 bg-white scroll-mt-24" id="gastronomia">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Column: Visual Asset with Floating Badge */}

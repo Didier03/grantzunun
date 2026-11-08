@@ -2,7 +2,18 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { MessageCircle, Menu, X, Compass, CalendarCheck } from "lucide-react";
+import { usePathname } from "next/navigation";
+import {
+  MessageCircle,
+  Menu,
+  X,
+  Compass,
+  CalendarCheck,
+  BookOpen,
+  ShieldCheck,
+  Award,
+  Handshake,
+} from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 interface NavbarProps {
@@ -12,6 +23,7 @@ interface NavbarProps {
 export function Navbar({ onOpenReserveModal }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -21,60 +33,120 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
-    { label: "Actividades", href: "#actividades" },
-    { label: "Paquetes", href: "#paquetes" },
-    { label: "Hospedaje", href: "#hospedaje" },
-    { label: "Gastronomía", href: "#gastronomia" },
+  // Secciones principales en app/page.tsx
+  const mainNavLinks = [
+    { label: "Actividades Extremas y Aventura", href: "/#actividades-extremas" },
+    { label: "Actividades de Recreación y Descanso", href: "/#recreacion-descanso" },
+    { label: "Paquetes", href: "/#paquetes" },
+    { label: "Experiencias", href: "/#experiencias" },
+    { label: "Hospedaje", href: "/#hospedaje" },
+    { label: "Gastronomía", href: "/#gastronomia" },
   ];
+
+  // Secciones institucionales en rutas dedicadas
+  const institutionalLinks = [
+    { label: "Historia del Gran T´Zunun", href: "/historia", icon: BookOpen },
+    { label: "Reglamentos", href: "/reglamentos", icon: ShieldCheck },
+    { label: "Certificaciones", href: "/certificaciones", icon: Award },
+    { label: "Convenios y Alianzas", href: "/convenios", icon: Handshake },
+  ];
+
+  const handleReserveClick = () => {
+    if (onOpenReserveModal) {
+      onOpenReserveModal();
+    } else {
+      window.open(
+        getWhatsAppUrl("¡Hola! Quisiera reservar una fecha para visitar El Gran T´Zunun."),
+        "_blank",
+        "noopener,noreferrer"
+      );
+    }
+  };
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-200/80 py-3.5"
-          : "bg-white/80 backdrop-blur-sm border-b border-black/5 py-4"
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-neutral-200/80"
+          : "bg-white/90 backdrop-blur-sm border-b border-black/5"
       }`}
     >
-      <div className="max-w-[1280px] mx-auto px-6 md:px-12 flex items-center justify-between">
+      {/* Barra Superior Institucional (Desktop) */}
+      <div className="hidden lg:block bg-[#003926] text-emerald-50 border-b border-emerald-900/40">
+        <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-1.5 flex items-center justify-between text-xs">
+          <span className="text-emerald-200/90 font-medium tracking-wide">
+            Reserva Natural & Parque Ecoturístico · Península de Yucatán
+          </span>
+          <nav className="flex items-center gap-6" aria-label="Navegación institucional">
+            {institutionalLinks.map((item) => {
+              const Icon = item.icon;
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`inline-flex items-center gap-1.5 py-0.5 transition-colors ${
+                    isActive
+                      ? "text-[#85f8c4] font-semibold underline underline-offset-4"
+                      : "text-emerald-100/90 hover:text-[#85f8c4]"
+                  }`}
+                >
+                  <Icon className="w-3.5 h-3.5 text-[#85f8c4]" />
+                  <span>{item.label}</span>
+                </Link>
+              );
+            })}
+          </nav>
+        </div>
+      </div>
+
+      {/* Barra Principal de Secciones */}
+      <div
+        className={`max-w-[1280px] mx-auto px-6 md:px-12 flex items-center justify-between gap-4 transition-all duration-300 ${
+          isScrolled ? "py-3" : "py-3.5"
+        }`}
+      >
         {/* Brand Wordmark (Zone 1) */}
         <Link
-          href="#"
-          className="text-xl md:text-2xl font-bold tracking-tight text-[#006948] hover:opacity-90 transition-opacity flex items-center gap-2"
+          href="/"
+          className="text-lg xl:text-xl font-bold tracking-tight text-[#006948] hover:opacity-90 transition-opacity flex items-center gap-2 shrink-0"
         >
           <span className="w-2.5 h-2.5 rounded-full bg-[#00855d] inline-block animate-pulse" />
           <span>El Gran T´Zunun</span>
         </Link>
 
         {/* Clean Nav Links (Zone 2) */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
+        <nav
+          className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 flex-wrap"
+          aria-label="Secciones del parque"
+        >
+          {mainNavLinks.map((link) => (
+            <Link
               key={link.label}
               href={link.href}
-              className="text-sm font-medium text-neutral-700 hover:text-[#006948] transition-colors relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#006948] hover:after:w-full after:transition-all"
+              className="text-xs xl:text-[13px] font-medium text-neutral-700 hover:text-[#006948] transition-colors relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#006948] hover:after:w-full after:transition-all"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         {/* Action Button (Zone 3) */}
-        <div className="hidden sm:flex items-center gap-3">
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
           <button
             type="button"
-            onClick={onOpenReserveModal}
-            className="px-5 py-2.5 bg-[#006948] hover:bg-[#005137] text-white text-xs font-semibold rounded uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-sm hover:shadow"
+            onClick={handleReserveClick}
+            className="px-4 xl:px-5 py-2.5 bg-[#006948] hover:bg-[#005137] text-white text-xs font-semibold rounded uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-sm hover:shadow"
           >
             Reservar
           </button>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <div className="flex md:hidden items-center gap-2">
+        {/* Mobile / Tablet Hamburger Button */}
+        <div className="flex lg:hidden items-center gap-2">
           <button
             type="button"
-            onClick={onOpenReserveModal}
+            onClick={handleReserveClick}
             className="px-3.5 py-1.5 bg-[#006948] text-white text-xs font-semibold rounded uppercase tracking-wider"
           >
             Reservar
@@ -92,25 +164,55 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
 
       {/* Mobile Drawer */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-b border-neutral-200 px-6 py-6 shadow-xl animate-in slide-in-from-top duration-200">
-          <div className="flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-medium text-neutral-800 hover:text-[#006948] py-2 border-b border-neutral-100 flex items-center justify-between"
-              >
-                <span>{link.label}</span>
-                <Compass className="w-4 h-4 text-neutral-400" />
-              </a>
-            ))}
+        <div className="lg:hidden bg-white border-b border-neutral-200 px-6 py-6 shadow-xl max-h-[85vh] overflow-y-auto animate-in slide-in-from-top duration-200">
+          <div className="flex flex-col gap-5">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-[#006948] mb-2">
+                Explora el Parque
+              </p>
+              <div className="flex flex-col">
+                {mainNavLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-sm font-medium text-neutral-800 hover:text-[#006948] py-2.5 border-b border-neutral-100 flex items-center justify-between"
+                  >
+                    <span>{link.label}</span>
+                    <Compass className="w-4 h-4 text-neutral-400 shrink-0" />
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-widest text-neutral-500 mb-2">
+                Nuestro Parque e Información
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {institutionalLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="text-sm font-medium text-neutral-700 hover:text-[#006948] p-2.5 rounded-lg bg-neutral-50 hover:bg-emerald-50/60 border border-neutral-200/70 flex items-center gap-2.5 transition-colors"
+                    >
+                      <Icon className="w-4 h-4 text-[#006948] shrink-0" />
+                      <span>{item.label}</span>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+
             <div className="pt-2 flex flex-col gap-2">
               <button
                 type="button"
                 onClick={() => {
                   setIsMobileMenuOpen(false);
-                  onOpenReserveModal?.();
+                  handleReserveClick();
                 }}
                 className="w-full py-3 bg-[#006948] text-white text-sm font-semibold rounded text-center flex items-center justify-center gap-2"
               >
