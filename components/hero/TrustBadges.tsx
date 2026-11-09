@@ -2,25 +2,28 @@
 
 import React from "react";
 import { Award, ShieldCheck, MessageCircle } from "lucide-react";
+import { useTranslation } from "@/i18n";
 
 export function TrustBadges() {
+  const { t } = useTranslation();
+
   const badges = [
     {
       icon: Award,
-      metric: "+5,000",
-      label: "Aventureros Felices",
+      metric: t.hero.trustBadges[0].metric,
+      label: t.hero.trustBadges[0].label,
       iconColor: "text-[#85f8c4]",
     },
     {
       icon: ShieldCheck,
-      metric: "100% Seguro",
-      label: "Guías Certificados",
+      metric: t.hero.trustBadges[1].metric,
+      label: t.hero.trustBadges[1].label,
       iconColor: "text-[#85f8c4]",
     },
     {
       icon: MessageCircle,
-      metric: "Respuesta Rápida",
-      label: "Vía WhatsApp",
+      metric: t.hero.trustBadges[2].metric,
+      label: t.hero.trustBadges[2].label,
       iconColor: "text-[#25D366]",
     },
   ];

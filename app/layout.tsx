@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
+import { I18nProvider } from "@/i18n";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -18,11 +19,19 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "El Gran T´Zunun - La Aventura Te Espera | Parque Natural",
-  description: "Descubre la aventura y la naturaleza en El Gran T´Zunun: tirolesas panorámicas, cenotes sagrados, hospedaje rústico, gastronomía maya y pasadías todo incluido en la selva.",
-  keywords: ["El Gran TZunun", "cenotes yucatan", "tirolesas maya", "parque aventura selva", "pasadias cancun merida", "glamping yucatan"],
+  description: "Descubre la aventura y la naturaleza en El Gran T´Zunun: tirolesas panorámicas, experiencias recreativas, actividades extremas, hospedaje rústico, gastronomía maya y pasadías todo incluido en la selva.",
+  keywords: [
+    "El Gran Tzunun", 
+    "Parque de naturaleza", 
+    "tirolesas", 
+    "juegos extremos", 
+    "turismo campeche", 
+    "Tzunun"
+  ],
   openGraph: {
     title: "El Gran T´Zunun - Parque de Naturaleza y Aventura",
-    description: "Tirolesas sobre la copa de los árboles, cenotes cristalinos milenarios y descanso idílico en el corazón verde de la península.",
+    description: "Tirolesas sobre la copa de los árboles, actividades exptremas y descanso idílico en el corazón verde de la península.",
+    url: "URL_DEL_DOMINIO_PENDIENTE", 
     locale: "es_MX",
     type: "website",
   },
@@ -36,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${inter.variable} scroll-smooth`}>
       <body className="font-sans min-h-screen flex flex-col bg-[#f7f9fb] text-[#191c1e] antialiased selection:bg-[#85f8c4] selection:text-[#002114]">
-        {children}
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );

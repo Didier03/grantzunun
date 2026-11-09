@@ -3,13 +3,14 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Trees, ArrowRight, Ticket, MessageCircle } from "lucide-react";
-import { PARK_INFO } from "@/data/parkData";
 import { TrustBadges } from "./TrustBadges";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useTranslation } from "@/i18n";
 
 export function HeroSection() {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const slides = PARK_INFO.heroSlides;
+  const { t } = useTranslation();
+  const slides = t.hero.slides;
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -51,32 +52,32 @@ export function HeroSection() {
           {/* Park Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#006948]/90 backdrop-blur-md text-white text-xs font-semibold uppercase tracking-wider mb-6 border border-emerald-400/30 shadow-sm">
             <Trees className="w-4 h-4 text-[#85f8c4]" />
-            <span>{PARK_INFO.tagline}</span>
+            <span>{t.hero.tagline}</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold leading-[1.1] tracking-tight text-white mb-6 font-display">
-            Descubre la Aventura y la Naturaleza en{" "}
+            {t.hero.headlinePrefix}{" "}
             <span className="text-[#85f8c4] inline-block drop-shadow-sm">
-              El Gran T´Zunun
+              {t.hero.brandName}
             </span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-neutral-300 font-normal mb-8 max-w-xl leading-relaxed">
-            {PARK_INFO.subtitle}
+            {t.hero.subtitle}
           </p>
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-10">
             <a
-              href={getWhatsAppUrl("¡Hola! Quiero información para planear mi visita a El Gran T´Zunun.")}
+              href={getWhatsAppUrl(t.hero.planVisitWhatsappMsg)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-[#25D366] hover:bg-[#20ba59] text-white text-sm font-semibold rounded shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 group active:scale-95"
             >
               <MessageCircle className="w-5 h-5 fill-current" />
-              <span>Planear mi visita por WhatsApp</span>
+              <span>{t.hero.planVisitCta}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
 
@@ -85,7 +86,7 @@ export function HeroSection() {
               className="inline-flex items-center justify-center gap-2 px-6 py-4 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold rounded backdrop-blur-sm transition-all duration-200 border border-white/20 active:scale-95"
             >
               <Ticket className="w-4 h-4 text-emerald-300" />
-              <span>Ver Tarifas y Paquetes</span>
+              <span>{t.hero.viewPackagesCta}</span>
             </a>
           </div>
 
@@ -100,7 +101,7 @@ export function HeroSection() {
           <button
             key={index}
             onClick={() => setCurrentSlide(index)}
-            aria-label={`Ir al slide ${index + 1}`}
+            aria-label={`${t.hero.slideAriaPrefix} ${index + 1}`}
             className={`h-2.5 rounded-full transition-all duration-300 ${
               index === currentSlide
                 ? "w-8 bg-[#85f8c4]"

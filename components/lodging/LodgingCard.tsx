@@ -5,12 +5,15 @@ import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { LodgingOption } from "@/types";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useTranslation } from "@/i18n";
 
 interface LodgingCardProps {
   lodging: LodgingOption;
 }
 
 export function LodgingCard({ lodging }: LodgingCardProps) {
+  const { t } = useTranslation();
+
   const getBadgeStyle = (type: LodgingOption["badgeType"]) => {
     switch (type) {
       case "romantic":
@@ -71,7 +74,7 @@ export function LodgingCard({ lodging }: LodgingCardProps) {
           className="w-full py-3 px-4 bg-neutral-100 hover:bg-[#006948] text-neutral-800 hover:text-white rounded-lg text-xs font-semibold flex items-center justify-center gap-2 transition-colors duration-200 active:scale-95"
         >
           <MessageCircle className="w-4 h-4 text-[#25D366] group-hover:text-white" />
-          <span>Consultar disponibilidad en WhatsApp</span>
+          <span>{t.lodgingSection.checkAvailabilityCta}</span>
         </a>
       </div>
     </div>
