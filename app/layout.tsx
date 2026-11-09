@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Inter } from "next/font/google";
+import { I18nProvider } from "@/i18n";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -44,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${montserrat.variable} ${inter.variable} scroll-smooth`}>
       <body className="font-sans min-h-screen flex flex-col bg-[#f7f9fb] text-[#191c1e] antialiased selection:bg-[#85f8c4] selection:text-[#002114]">
-        {children}
+        <I18nProvider>{children}</I18nProvider>
       </body>
     </html>
   );

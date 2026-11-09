@@ -2,10 +2,12 @@
 
 import React from "react";
 import { Sparkles, Moon, HeartHandshake, Clock, ArrowUpRight } from "lucide-react";
-import { EXPERIENCES } from "@/data/parkData";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useTranslation } from "@/i18n";
 
 export function ExperiencesSection() {
+  const { t } = useTranslation();
+
   const renderIcon = (iconName: string) => {
     switch (iconName) {
       case "Sparkles":
@@ -26,20 +28,20 @@ export function ExperiencesSection() {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
           <div className="max-w-xl">
             <span className="text-xs font-bold uppercase tracking-widest text-[#9b3e3b] block mb-2">
-              Inmersión Cultural y Sensorial
+              {t.experiencesSection.eyebrow}
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 tracking-tight font-display">
-              Experiencias Únicas en El Gran T´Zunun
+              {t.experiencesSection.title}
             </h2>
           </div>
           <p className="text-neutral-600 text-base max-w-md leading-relaxed">
-            Vivencias guiadas por maestros locales para descubrir los secretos ancestrales, la biodiversidad y la magia nocturna del territorio maya.
+            {t.experiencesSection.description}
           </p>
         </div>
 
         {/* Experiences Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {EXPERIENCES.map((exp) => (
+          {t.experiencesSection.items.map((exp) => (
             <div
               key={exp.id}
               className="group bg-white rounded-2xl p-8 border border-neutral-200/80 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between"
@@ -75,7 +77,7 @@ export function ExperiencesSection() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-between w-full pt-4 border-t border-neutral-100 text-sm font-semibold text-[#006948] hover:text-[#005137] transition-colors group/btn"
               >
-                <span>Reservar experiencia</span>
+                <span>{t.experiencesSection.bookExperienceCta}</span>
                 <ArrowUpRight className="w-4 h-4 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
               </a>
             </div>
