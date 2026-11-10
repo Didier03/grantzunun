@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   MessageCircle,
@@ -112,10 +113,15 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
         {/* Brand Wordmark (Zone 1) */}
         <Link
           href="/"
-          className="text-lg xl:text-xl font-bold tracking-tight text-[#006948] hover:opacity-90 transition-opacity flex items-center gap-2 shrink-0"
+          className="-ml-2 flex shrink-0 items-center transition-opacity hover:opacity-90"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#00855d] inline-block animate-pulse" />
-          <span>El Gran T´Zunun</span>
+          <Image
+            src="/images/ic_tzunun.webp"
+            alt="El Gran T'Zunun"
+            width={1500}
+            height={491}
+            className="h-9 w-auto xl:h-10"
+          />
         </Link>
 
         {/* Clean Nav Links (Zone 2) */}

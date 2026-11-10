@@ -13,7 +13,7 @@ export const es = {
       "Descubre la aventura y la naturaleza en El Gran T´Zunun: tirolesas panorámicas, experiencias recreativas, actividades extremas, hospedaje rústico, gastronomía maya y pasadías todo incluido en la selva.",
   },
   navbar: {
-    topBarTagline: "Reserva Natural & Parque Ecoturístico · Península de Yucatán",
+    topBarTagline: "Reserva Natural & Parque Ecoturístico · Campeche, México",
     institutionalNavAria: "Navegación institucional",
     parkSectionsAria: "Secciones del parque",
     openMenuAria: "Abrir menú",
@@ -47,7 +47,7 @@ export const es = {
     headlinePrefix: "Descubre la Aventura y la Naturaleza en",
     brandName: "El Gran T´Zunun",
     subtitle:
-      "Tirolesas sobre la copa de los árboles, cenotes cristalinos milenarios, retos de circuito extremo y descanso idílico en el corazón verde de la península.",
+      "Tirolesas sobre el dosel de la selva, circuitos de aventura, gastronomía regional y descanso idílico en el corazón maya de Campeche.",
     planVisitCta: "Planear mi visita por WhatsApp",
     planVisitWhatsappMsg:
       "¡Hola! Quiero información para planear mi visita a El Gran T´Zunun.",

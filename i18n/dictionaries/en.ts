@@ -7,7 +7,7 @@ export const en: Dictionary = {
       "Discover adventure and nature at El Gran T´Zunun: panoramic ziplines, recreational experiences, extreme challenges, rustic eco-lodging, Mayan gastronomy, and all-inclusive jungle day passes.",
   },
   navbar: {
-    topBarTagline: "Nature Reserve & Eco-Adventure Park · Yucatán Peninsula",
+    topBarTagline: "Nature Reserve & Eco-Adventure Park · Campeche, México",
     institutionalNavAria: "Institutional navigation",
     parkSectionsAria: "Park sections",
     openMenuAria: "Open menu",
@@ -41,7 +41,7 @@ export const en: Dictionary = {
     headlinePrefix: "Discover Adventure and Nature at",
     brandName: "El Gran T´Zunun",
     subtitle:
-      "Canopy ziplines above the treetops, ancient crystal-clear cenotes, extreme obstacle courses, and idyllic relaxation in the green heart of the peninsula.",
+      "Canopy ziplines, adventure courses, authentic regional dining, and an idyllic escape in the heart of the Mayan jungle.",
     planVisitCta: "Plan my visit via WhatsApp",
     planVisitWhatsappMsg:
       "Hi! I would like information to plan my visit to El Gran T´Zunun.",
