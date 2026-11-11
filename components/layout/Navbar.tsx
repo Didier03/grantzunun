@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   MessageCircle,
@@ -15,6 +16,8 @@ import {
   Handshake,
 } from "lucide-react";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
+import { useTranslation } from "@/i18n";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 interface NavbarProps {
   onOpenReserveModal?: () => void;
@@ -24,6 +27,7 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,20 +39,20 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
 
   // Secciones principales en app/page.tsx
   const mainNavLinks = [
-    { label: "Actividades Extremas y Aventura", href: "/#actividades-extremas" },
-    { label: "Actividades de Recreación y Descanso", href: "/#recreacion-descanso" },
-    { label: "Paquetes", href: "/#paquetes" },
-    { label: "Experiencias", href: "/#experiencias" },
-    { label: "Hospedaje", href: "/#hospedaje" },
-    { label: "Gastronomía", href: "/#gastronomia" },
+    { label: t.navbar.mainLinks.extremeActivities, href: "/#actividades-extremas" },
+    { label: t.navbar.mainLinks.recreation, href: "/#recreacion-descanso" },
+    { label: t.navbar.mainLinks.packages, href: "/#paquetes" },
+    { label: t.navbar.mainLinks.experiences, href: "/#experiencias" },
+    { label: t.navbar.mainLinks.lodging, href: "/#hospedaje" },
+    { label: t.navbar.mainLinks.gastronomy, href: "/#gastronomia" },
   ];
 
   // Secciones institucionales en rutas dedicadas
   const institutionalLinks = [
-    { label: "Historia del Gran T´Zunun", href: "/historia", icon: BookOpen },
-    { label: "Reglamentos", href: "/reglamentos", icon: ShieldCheck },
-    { label: "Certificaciones", href: "/certificaciones", icon: Award },
-    { label: "Convenios y Alianzas", href: "/convenios", icon: Handshake },
+    { label: t.navbar.institutionalLinks.history, href: "/historia", icon: BookOpen },
+    { label: t.navbar.institutionalLinks.rules, href: "/reglamentos", icon: ShieldCheck },
+    { label: t.navbar.institutionalLinks.certifications, href: "/certificaciones", icon: Award },
+    { label: t.navbar.institutionalLinks.alliances, href: "/convenios", icon: Handshake },
   ];
 
   const handleReserveClick = () => {
@@ -56,7 +60,7 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
       onOpenReserveModal();
     } else {
       window.open(
-        getWhatsAppUrl("¡Hola! Quisiera reservar una fecha para visitar El Gran T´Zunun."),
+        getWhatsAppUrl(t.navbar.reserveWhatsappDefaultMsg),
         "_blank",
         "noopener,noreferrer"
       );
@@ -75,9 +79,9 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
       <div className="hidden lg:block bg-[#003926] text-emerald-50 border-b border-emerald-900/40">
         <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-1.5 flex items-center justify-between text-xs">
           <span className="text-emerald-200/90 font-medium tracking-wide">
-            Reserva Natural & Parque Ecoturístico · Península de Yucatán
+            {t.navbar.topBarTagline}
           </span>
-          <nav className="flex items-center gap-6" aria-label="Navegación institucional">
+          <nav className="flex items-center gap-6" aria-label={t.navbar.institutionalNavAria}>
             {institutionalLinks.map((item) => {
               const Icon = item.icon;
               const isActive = pathname === item.href;
@@ -109,20 +113,25 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
         {/* Brand Wordmark (Zone 1) */}
         <Link
           href="/"
-          className="text-lg xl:text-xl font-bold tracking-tight text-[#006948] hover:opacity-90 transition-opacity flex items-center gap-2 shrink-0"
+          className="-ml-2 flex shrink-0 items-center transition-opacity hover:opacity-90"
         >
-          <span className="w-2.5 h-2.5 rounded-full bg-[#00855d] inline-block animate-pulse" />
-          <span>El Gran T´Zunun</span>
+          <Image
+            src="/images/ic_tzunun.webp"
+            alt="El Gran T'Zunun"
+            width={1500}
+            height={491}
+            className="h-9 w-auto xl:h-10"
+          />
         </Link>
 
         {/* Clean Nav Links (Zone 2) */}
         <nav
           className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 flex-wrap"
-          aria-label="Secciones del parque"
+          aria-label={t.navbar.parkSectionsAria}
         >
           {mainNavLinks.map((link) => (
             <Link
-              key={link.label}
+              key={link.href}
               href={link.href}
               className="text-xs xl:text-[13px] font-medium text-neutral-700 hover:text-[#006948] transition-colors relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#006948] hover:after:w-full after:transition-all"
             >
@@ -131,31 +140,33 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
           ))}
         </nav>
 
-        {/* Action Button (Zone 3) */}
+        {/* Language Switcher + Action Button (Zone 3) */}
         <div className="hidden lg:flex items-center gap-3 shrink-0">
+          <LanguageSwitcher variant="light" />
           <button
             type="button"
             onClick={handleReserveClick}
             className="px-4 xl:px-5 py-2.5 bg-[#006948] hover:bg-[#005137] text-white text-xs font-semibold rounded uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-sm hover:shadow"
           >
-            Reservar
+            {t.navbar.reserveBtn}
           </button>
         </div>
 
-        {/* Mobile / Tablet Hamburger Button */}
+        {/* Mobile / Tablet Actions */}
         <div className="flex lg:hidden items-center gap-2">
+          <LanguageSwitcher variant="light" />
           <button
             type="button"
             onClick={handleReserveClick}
             className="px-3.5 py-1.5 bg-[#006948] text-white text-xs font-semibold rounded uppercase tracking-wider"
           >
-            Reservar
+            {t.navbar.reserveBtn}
           </button>
           <button
             type="button"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 text-neutral-800 hover:text-[#006948] transition-colors"
-            aria-label="Abrir menú"
+            aria-label={t.navbar.openMenuAria}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -168,12 +179,12 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
           <div className="flex flex-col gap-5">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-widest text-[#006948] mb-2">
-                Explora el Parque
+                {t.navbar.exploreParkHeading}
               </p>
               <div className="flex flex-col">
                 {mainNavLinks.map((link) => (
                   <Link
-                    key={link.label}
+                    key={link.href}
                     href={link.href}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-sm font-medium text-neutral-800 hover:text-[#006948] py-2.5 border-b border-neutral-100 flex items-center justify-between"
@@ -187,7 +198,7 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
 
             <div>
               <p className="text-[11px] font-bold uppercase tracking-widest text-neutral-500 mb-2">
-                Nuestro Parque e Información
+                {t.navbar.parkInfoHeading}
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {institutionalLinks.map((item) => {
@@ -217,16 +228,16 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
                 className="w-full py-3 bg-[#006948] text-white text-sm font-semibold rounded text-center flex items-center justify-center gap-2"
               >
                 <CalendarCheck className="w-4 h-4" />
-                <span>Reservar Fecha</span>
+                <span>{t.navbar.reserveDateBtn}</span>
               </button>
               <a
-                href={getWhatsAppUrl("¡Hola! Quisiera información para visitar El Gran T´Zunun")}
+                href={getWhatsAppUrl(t.navbar.infoWhatsappDefaultMsg)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3 bg-[#25D366] text-white text-sm font-semibold rounded text-center flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4" />
-                <span>Contactar por WhatsApp</span>
+                <span>{t.navbar.contactWhatsappBtn}</span>
               </a>
             </div>
           </div>

@@ -3,7 +3,7 @@
  * Configured for El Gran T'Zunun Nature & Adventure Park
  */
 
-export const WHATSAPP_PHONE = "529990000000"; // Phone format without +, spaces or hyphens
+export const WHATSAPP_PHONE = "+52 1 981 138 0060"; // Phone format without +, spaces or hyphens
 
 /**
  * Builds a direct WhatsApp web/app link with encoded text message
@@ -45,7 +45,32 @@ export function createCustomQuoteWhatsAppMessage(options: {
   transport?: boolean;
   name?: string;
   totalEstimated?: number;
+  locale?: "es" | "en";
 }): string {
+  const isEn = options.locale === "en";
+
+  if (isEn) {
+    let msg = `🌿 *Visit Quote - El Gran T´Zunun* 🌿\n\n`;
+    if (options.name) {
+      msg += `👤 *Name:* ${options.name}\n`;
+    }
+    if (options.packageName) {
+      msg += `🎟️ *Preferred package:* ${options.packageName}\n`;
+    }
+    msg += `👥 *Visitors:* ${options.adults} Adult(s) ${options.children > 0 ? `and ${options.children} Child(ren)` : ""}\n`;
+    if (options.date) {
+      msg += `📅 *Tentative date:* ${options.date}\n`;
+    }
+    if (options.transport) {
+      msg += `🚐 *Transport:* Yes, I need round-trip transportation\n`;
+    }
+    if (options.totalEstimated && options.totalEstimated > 0) {
+      msg += `💵 *Estimated total:* $${options.totalEstimated.toLocaleString("en-US")} MXN\n`;
+    }
+    msg += `\nCould you please confirm availability and the booking/payment process? Thank you!`;
+    return msg;
+  }
+
   let msg = `🌿 *Cotización de Visita - El Gran T´Zunun* 🌿\n\n`;
   if (options.name) {
     msg += `👤 *Nombre:* ${options.name}\n`;
