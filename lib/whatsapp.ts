@@ -3,7 +3,7 @@
  * Configured for El Gran T'Zunun Nature & Adventure Park
  */
 
-export const WHATSAPP_PHONE = "+52 1 981 138 0060"; // Phone format without +, spaces or hyphens
+export const WHATSAPP_PHONE = "529811380060"; // Phone format without +, spaces or hyphens
 
 /**
  * Builds a direct WhatsApp web/app link with encoded text message

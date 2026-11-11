@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ArrowRight, ArrowUpRight, Zap, Leaf, Compass } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Zap, Leaf, Compass, Mountain, Tent, Star } from "lucide-react";
 import { ParkActivity } from "@/types";
 import { getWhatsAppUrl } from "@/lib/whatsapp";
 
@@ -20,6 +20,12 @@ export function ActivityCard({ activity }: ActivityCardProps) {
         return <Zap className="w-6 h-6 text-[#006948]" />;
       case "Leaf":
         return <Leaf className="w-6 h-6 text-[#9b3e3b]" />;
+      case "Mountain":
+        return <Mountain className="w-6 h-6 text-[#006948]" />;
+      case "Tent":
+        return <Tent className="w-6 h-6 text-[#006948]" />;
+      case "Star":
+        return <Star className="w-6 h-6 text-[#006948]" />;
       default:
         return <Compass className="w-6 h-6 text-[#006948]" />;
     }

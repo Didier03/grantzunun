@@ -88,68 +88,81 @@ export const es = {
     items: [
       {
         id: "tirolesas",
-        title: "Circuito de Tirolesas Panorámicas",
+        title: "Tirolesas",
         category: "Adrenalina Pura",
         categoryColor: "emerald",
         description:
-          "Vuela a más de 30 metros de altura sobre la densa bóveda selvática con vistas 360° de la reserva y equipos de estándar internacional.",
+          "Cruza 850 metros de pura adrenalina a más de 35 metros de altura en dos tirolesas continuas. Disfruta la emoción de volar a toda velocidad con las mejores vistas panorámicas de la naturaleza e infraestructura 100% segura.",
         image: "/images/hero-zipline.svg",
         colSpan: "two-thirds",
-        ctaText: "Preguntar por tirolesa",
+        ctaText: "Preguntar por tirolesas",
         whatsappMessage:
-          "Hola, quiero información del circuito de Tirolesas Panorámicas en El Gran T´Zunun.",
-      },
-      {
-        id: "cenote",
-        title: "Cenote Turquesa Místico",
-        category: "Místico & Refrescante",
-        categoryColor: "secondary",
-        description:
-          "Sumérgete en aguas cristalinas con formaciones rocosas milenarias y luz natural filtrada.",
-        image: "/images/cenote-sagrado.svg",
-        colSpan: "one-third",
-        ctaText: "Detalles del cenote",
-        whatsappMessage:
-          "Hola, quiero información y detalles del Cenote Turquesa Místico en El Gran T´Zunun.",
+          "Hola, quiero información sobre el circuito de Tirolesas en El Gran T´Zunun.",
       },
       {
         id: "exatlon",
-        title: "Circuito Exatlón & Puentes Colgantes",
+        title: "Exatlón",
         category: "Desafío Físico",
         categoryColor: "secondary",
         description:
-          "Retos de equilibrio, cuerdas de destreza y puentes colgantes suspendidos entre árboles tropicales para poner a prueba tu espíritu audaz.",
+          "Pon a prueba tu equilibrio y destreza en nuestra torre hexagonal de dos niveles, apta para niños (desde 5 años) y adultos. Un circuito de retos aéreos 100% asegurado, perfecto para liberar estrés y disfrutar en equipo.",
         iconName: "Zap",
         colSpan: "one-third",
         ctaText: "Consultar requerimientos",
         whatsappMessage:
-          "Hola, quiero información del circuito Exatlón y Puentes Colgantes en El Gran T´Zunun.",
+          "Hola, quiero información sobre el circuito Exatlón en El Gran T´Zunun.",
       },
       {
-        id: "cacao",
-        title: "Naturaleza, Cacao & Herbolaria",
-        category: "Tradición Viva",
+        id: "rapel",
+        title: "Rapel",
+        category: "Vértigo",
+        categoryColor: "secondary",
+        description:
+          "Alcanza la cima en un muro de 12 metros con retos para novatos (desde los 5 años) y escaladores avanzados. Pon a prueba tu fuerza y concentración con equipo certificado y total seguridad guiada.",
+        iconName: "Mountain",
+        colSpan: "one-third",
+        ctaText: "Detalles de rapel",
+        whatsappMessage:
+          "Hola, quiero información sobre el muro de Rapel en El Gran T´Zunun.",
+      },
+      {
+        id: "senderismo",
+        title: "Senderismo",
+        category: "Conexión Natural",
         categoryColor: "tertiary",
         description:
-          "Senderismo botánico guiado por sabios locales, avistamiento de aves exóticas y taller demostrativo del sagrado cacao maya artesanal.",
+          "Conéctate con la naturaleza en una caminata guiada por la selva. Descubre los secretos de árboles medicinales y energéticos, mientras aprendes a coexistir con la fauna local en un recorrido para renovar cuerpo y mente.",
         iconName: "Leaf",
         colSpan: "one-third",
-        ctaText: "Ver horarios de talleres",
+        ctaText: "Ver rutas guiadas",
         whatsappMessage:
-          "Hola, quiero información de los talleres de Cacao Maya y Herbolaria en El Gran T´Zunun.",
+          "Hola, quiero información sobre las rutas de Senderismo en El Gran T´Zunun.",
       },
       {
-        id: "ciclismo",
-        title: "Senderos & Ciclismo de Selva",
-        category: "Rutas Escénicas",
+        id: "campismo",
+        title: "Campismo",
+        category: "Inmersión",
         categoryColor: "emerald",
         description:
-          "Rutas señalizadas entre la selva y riachuelos ideales para pedalear o caminar en familia.",
-        image: "/images/senderos-selva.svg",
+          "Duerme bajo las estrellas y reconecta con la naturaleza. Ofrecemos zonas para campismo recreativo con acceso a alberca y servicios, así como áreas apartadas para grupos y campismo formativo o de supervivencia.",
+        iconName: "Tent",
         colSpan: "one-third",
-        ctaText: "Consultar en WhatsApp",
+        ctaText: "Reservar zona",
         whatsappMessage:
-          "Hola, quiero información de las rutas de senderismo y ciclismo de selva en El Gran T´Zunun.",
+          "Hola, quiero información y reservar zona de Campismo en El Gran T´Zunun.",
+      },
+      {
+        id: "astronomia",
+        title: "Observación sideral y astronómica",
+        category: "Misticismo Nocturno",
+        categoryColor: "secondary",
+        description:
+          "Descubre la magia del cielo nocturno lejos de la contaminación lumínica. Una experiencia astronómica guiada para contemplar estrellas, planetas y constelaciones en la tranquilidad y oscuridad de la naturaleza.",
+        iconName: "Star",
+        colSpan: "two-thirds",
+        ctaText: "Consultar fechas",
+        whatsappMessage:
+          "Hola, quiero información sobre las experiencias de Observación Astronómica en El Gran T´Zunun.",
       },
     ] as ParkActivity[],
   },
