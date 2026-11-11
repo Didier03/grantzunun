@@ -82,68 +82,81 @@ export const en: Dictionary = {
     items: [
       {
         id: "tirolesas",
-        title: "Panoramic Zipline Circuit",
+        title: "Ziplines",
         category: "Pure Adrenaline",
         categoryColor: "emerald",
         description:
-          "Soar more than 30 meters above the dense jungle canopy with 360° views of the reserve and international-standard safety gear.",
+          "Cross 850 meters of pure adrenaline at over 35 meters high on two continuous ziplines. Enjoy the thrill of flying at full speed with the best panoramic views of nature and 100% safe infrastructure.",
         image: "/images/hero-zipline.svg",
         colSpan: "two-thirds",
         ctaText: "Ask about ziplines",
         whatsappMessage:
-          "Hi, I would like information about the Panoramic Zipline Circuit at El Gran T´Zunun.",
-      },
-      {
-        id: "cenote",
-        title: "Mystic Turquoise Cenote",
-        category: "Mystic & Refreshing",
-        categoryColor: "secondary",
-        description:
-          "Dive into crystal-clear waters surrounded by ancient rock formations and natural filtered sunlight.",
-        image: "/images/cenote-sagrado.svg",
-        colSpan: "one-third",
-        ctaText: "Cenote details",
-        whatsappMessage:
-          "Hi, I would like information and details about the Mystic Turquoise Cenote at El Gran T´Zunun.",
+          "Hello, I want information about the Ziplines circuit at El Gran T´Zunun.",
       },
       {
         id: "exatlon",
-        title: "Exatlón Circuit & Hanging Bridges",
+        title: "Exathlon",
         category: "Physical Challenge",
         categoryColor: "secondary",
         description:
-          "Balance challenges, agility ropes, and suspension bridges hanging between tropical trees to test your bold spirit.",
+          "Test your balance and agility on our two-level hexagonal tower, suitable for kids (from 5 years old) and adults. A 100% secured aerial challenge circuit, perfect for releasing stress and enjoying as a team.",
         iconName: "Zap",
         colSpan: "one-third",
         ctaText: "Check requirements",
         whatsappMessage:
-          "Hi, I would like information about the Exatlón Circuit & Hanging Bridges at El Gran T´Zunun.",
+          "Hello, I want information about the Exathlon circuit at El Gran T´Zunun.",
       },
       {
-        id: "cacao",
-        title: "Nature, Cacao & Herbalism",
-        category: "Living Tradition",
+        id: "rapel",
+        title: "Rappelling",
+        category: "Vertigo",
+        categoryColor: "secondary",
+        description:
+          "Reach the top on a 12-meter wall with challenges for beginners (from 5 years old) and advanced climbers. Test your strength and concentration with certified equipment and total guided security.",
+        iconName: "Mountain",
+        colSpan: "one-third",
+        ctaText: "Rappelling details",
+        whatsappMessage:
+          "Hello, I want information about Rappelling at El Gran T´Zunun.",
+      },
+      {
+        id: "senderismo",
+        title: "Hiking",
+        category: "Natural Connection",
         categoryColor: "tertiary",
         description:
-          "Botanical walks guided by local elders, exotic birdwatching, and an artisanal Mayan sacred cacao workshop.",
+          "Connect with nature on a guided walk through the jungle. Discover the secrets of medicinal and energetic trees while learning to coexist with local fauna on a journey to renew body and mind.",
         iconName: "Leaf",
         colSpan: "one-third",
-        ctaText: "See workshop schedules",
+        ctaText: "See guided routes",
         whatsappMessage:
-          "Hi, I would like information about the Mayan Cacao & Herbalism workshops at El Gran T´Zunun.",
+          "Hello, I want information about Guided Hiking at El Gran T´Zunun.",
       },
       {
-        id: "ciclismo",
-        title: "Jungle Trails & Cycling",
-        category: "Scenic Routes",
+        id: "campismo",
+        title: "Camping",
+        category: "Immersion",
         categoryColor: "emerald",
         description:
-          "Marked trails through the jungle and streams, ideal for family cycling or nature walks.",
-        image: "/images/senderos-selva.svg",
+          "Sleep under the stars and reconnect with nature. We offer recreational camping zones with pool access and services, as well as secluded areas for groups and formative or survival camping.",
+        iconName: "Tent",
         colSpan: "one-third",
-        ctaText: "Ask on WhatsApp",
+        ctaText: "Book a zone",
         whatsappMessage:
-          "Hi, I would like information about the jungle hiking and cycling trails at El Gran T´Zunun.",
+          "Hello, I want to book a Camping zone at El Gran T´Zunun.",
+      },
+      {
+        id: "astronomia",
+        title: "Stargazing and Astronomy",
+        category: "Night Mysticism",
+        categoryColor: "secondary",
+        description:
+          "Discover the magic of the night sky away from light pollution. A guided astronomical experience to contemplate stars, planets, and constellations in the tranquility and darkness of nature.",
+        iconName: "Star",
+        colSpan: "two-thirds",
+        ctaText: "Check dates",
+        whatsappMessage:
+          "Hello, I want information about the Stargazing experience at El Gran T´Zunun.",
       },
     ],
   },
