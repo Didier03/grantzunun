@@ -5,17 +5,17 @@ import "./globals.css";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
   variable: "--font-montserrat",
   display: "swap",
 });
 
+
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-inter",
   display: "swap",
 });
+
 
 export const metadata: Metadata = {
   title: "El Gran T´Zunun - La Aventura Te Espera | Parque Natural",
