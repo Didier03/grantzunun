@@ -167,56 +167,69 @@ export const en: Dictionary = {
       "Spaces thoughtfully designed to slow down, enjoy family time, and reconnect with the serenity of the Mayan jungle at your own pace.",
     items: [
       {
-        id: "hamacas-selva",
-        title: "Hammock & Reading Sanctuary",
-        category: "Total Relaxation",
-        categoryColor: "emerald",
-        description:
-          "Unwind under the shade of century-old ceiba trees in our artisanal hammock pavilion, accompanied by the soothing sounds of wind and birds.",
-        iconName: "Leaf",
-        colSpan: "one-third",
-        ctaText: "Ask about rest areas",
-        whatsappMessage:
-          "Hi, I would like information about the recreation and relaxation zones at El Gran T´Zunun.",
-      },
-      {
-        id: "albercas-naturales",
-        title: "Water Mirrors & Eco-Pools",
+        id: "albercas",
+        title: "Pools",
         category: "Family Recreation",
         categoryColor: "secondary",
         description:
-          "Crystal-clear spring waters free of harsh chemicals, featuring shallow areas ideal for children, families, and relaxed swimming.",
+          "Refresh after the adventure in our two pools designed for the whole family. A clean, comfortable, and safe space with sustainable filtration technology that cares for and optimizes the park's natural resources.",
         image: "/images/cenote-sagrado.svg",
         colSpan: "two-thirds",
-        ctaText: "See family options",
+        ctaText: "See pool details",
         whatsappMessage:
-          "Hi, I would like information about the natural pools and family recreation at El Gran T´Zunun.",
+          "Hello, I want information about the Pools and family areas at El Gran T´Zunun.",
+      },
+      {
+        id: "hospedaje",
+        title: "Lodging",
+        category: "Total Rest",
+        categoryColor: "emerald",
+        description:
+          "Adventure is not at odds with comfort. After a day in nature, relax in rooms designed for safe, intimate, and regenerative rest, ready to fully renew your energy.",
+        iconName: "Bed",
+        colSpan: "one-third",
+        ctaText: "Check availability",
+        whatsappMessage:
+          "Hello, I want information and to check Lodging availability at El Gran T´Zunun.",
+      },
+      {
+        id: "restaurante",
+        title: "Restaurant",
+        category: "Gastronomy",
+        categoryColor: "tertiary",
+        description:
+          "Taste the best of regional gastronomy with fresh ingredients from our own garden. Enjoy authentic dishes and refreshing natural fruit waters harvested at home, straight from the field to your table.",
+        iconName: "Utensils",
+        colSpan: "one-third",
+        ctaText: "See menu",
+        whatsappMessage:
+          "Hello, I want information about the Restaurant and dining options at El Gran T´Zunun.",
+      },
+      {
+        id: "ceremonias",
+        title: "Ancestral Ceremonies",
+        category: "Mysticism",
+        categoryColor: "secondary",
+        description:
+          "Reconnect with ancient wisdom in our Mayan holistic space. In an ancient ceremonial center, experience ancestral rituals and ceremonies to heal body, mind, and spirit through the energy of nature.",
+        iconName: "Sparkles",
+        colSpan: "two-thirds",
+        ctaText: "Schedule ceremony",
+        whatsappMessage:
+          "Hello, I want information to participate in the Ancestral Ceremonies at El Gran T´Zunun.",
       },
       {
         id: "avistamiento-aves",
-        title: "Flora & Hummingbird (T´Zunun) Watching",
+        title: "Bird Watching",
         category: "Contemplation",
-        categoryColor: "tertiary",
-        description:
-          "Unhurried walks through pollinator gardens and quiet viewpoints to photograph the Mayan hummingbird and endemic orchids.",
-        iconName: "Compass",
-        colSpan: "one-third",
-        ctaText: "Ask about guided walks",
-        whatsappMessage:
-          "Hi, I would like information about birdwatching and contemplative trails at El Gran T´Zunun.",
-      },
-      {
-        id: "picnic-palapas",
-        title: "Private Palapas & Family Gathering",
-        category: "Open Spaces",
         categoryColor: "emerald",
         description:
-          "Lush green areas with breezy thatched palapas, traditional board games, and peaceful spots to unplug from city life.",
-        image: "/images/senderos-selva.svg",
-        colSpan: "two-thirds",
-        ctaText: "Reserve family space",
+          "Relax with the natural symphony of our birds in a protected environment. A contemplative experience that reduces stress and anxiety, while you discover species that find shelter and food in the park.",
+        iconName: "Feather",
+        colSpan: "one-third",
+        ctaText: "Tour information",
         whatsappMessage:
-          "Hi, I would like information about the private palapas and family gathering areas at El Gran T´Zunun.",
+          "Hello, I want information about the Bird Watching tours at El Gran T´Zunun.",
       },
     ],
   },
@@ -483,7 +496,7 @@ export const en: Dictionary = {
   footer: {
     rightsReserved: "All rights reserved.",
     locationTagline:
-      "Yucatán Peninsula, Mexico · Nature Reserve & Eco-Adventure Park",
+      "Campeche, Mexico · Nature Reserve & Eco-Adventure Park",
     directContact: "Direct Contact",
     directContactMsg:
       "Hi, I would like contact information and directions to El Gran T´Zunun.",
@@ -512,7 +525,7 @@ export const en: Dictionary = {
       "Do you have vegetarian options? Is a deposit required?...",
     submitBtn: "Continue on WhatsApp",
     footerNote:
-      "A direct chat will open with our guest service team in Yucatán.",
+      "A direct chat will open with our guest service team in Campeche.",
     extraOptions: {
       jungleRoom: "Jungle Comfort Cabin",
       glampingSuite: "Glamping Suite & Jacuzzi",
@@ -549,7 +562,7 @@ export const en: Dictionary = {
         ". Our park honors this messenger of life by protecting its natural habitat and offering every visitor a sanctuary of renewal and joy.",
       missionTitle: "Our Ecological Mission",
       missionDesc:
-        "To preserve the biocultural wealth of the Yucatán Peninsula through adventure and relaxation experiences that respect the flora, fauna, and traditions of Mayan communities.",
+        "To preserve the biocultural wealth of the Campeche through adventure and relaxation experiences that respect the flora, fauna, and traditions of Mayan communities.",
       statProtectedLabel: "Protected Reserve",
       statBirdSpeciesLabel: "Bird Species",
       timelineEyebrow: "Our Evolution",
