@@ -4,7 +4,7 @@ export const PARK_INFO = {
   name: "El Gran T´Zunun",
   tagline: "Parque de Naturaleza y Aventura en la Selva",
   subtitle: "Tirolesas sobre la copa de los árboles, cenotes cristalinos milenarios, retos de circuito extremo y descanso idílico en el corazón verde de la península.",
-  location: "Península de Yucatán, México",
+  location: "Campeche, México",
   heroSlides: [
     {
       id: "slide-1",

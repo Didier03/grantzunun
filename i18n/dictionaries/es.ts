@@ -173,56 +173,69 @@ export const es = {
       "Espacios pensados para bajar el ritmo, convivir en familia y reconectar con la serenidad de la selva maya sin prisas.",
     items: [
       {
-        id: "hamacas-selva",
-        title: "Santuario de Hamacas & Lectura",
-        category: "Descanso Total",
-        categoryColor: "emerald",
-        description:
-          "Relájate bajo la sombra de ceibas centenarias en nuestro pabellón de hamacas artesanales, acompañado por el sonido natural del viento y las aves.",
-        iconName: "Leaf",
-        colSpan: "one-third",
-        ctaText: "Consultar áreas de descanso",
-        whatsappMessage:
-          "Hola, quiero información sobre las zonas de recreación y descanso en El Gran T´Zunun.",
-      },
-      {
-        id: "albercas-naturales",
-        title: "Espejos de Agua & Albercas Ecológicas",
+        id: "albercas",
+        title: "Albercas",
         category: "Recreación Familiar",
         categoryColor: "secondary",
         description:
-          "Aguas cristalinas de manantial libres de químicos agresivos, con zonas de baja profundidad ideales para niños, familias y nado relajado.",
+          "Refréscate tras la aventura en nuestras dos albercas diseñadas para toda la familia. Un espacio limpio, cómodo y seguro con tecnología de filtración sustentable que cuida y optimiza los recursos naturales del parque.",
         image: "/images/cenote-sagrado.svg",
         colSpan: "two-thirds",
-        ctaText: "Ver opciones familiares",
+        ctaText: "Ver detalles de albercas",
         whatsappMessage:
-          "Hola, quiero información sobre las albercas naturales y recreación familiar en El Gran T´Zunun.",
+          "Hola, quiero información sobre las Albercas y áreas familiares en El Gran T´Zunun.",
+      },
+      {
+        id: "hospedaje",
+        title: "Hospedaje",
+        category: "Descanso Total",
+        categoryColor: "emerald",
+        description:
+          "La aventura no está peleada con la comodidad. Tras un día en la naturaleza, relájate en habitaciones diseñadas para un descanso seguro, íntimo y regenerativo, listas para renovar tu energía al máximo.",
+        iconName: "Bed",
+        colSpan: "one-third",
+        ctaText: "Consultar disponibilidad",
+        whatsappMessage:
+          "Hola, quiero información y consultar disponibilidad de Hospedaje en El Gran T´Zunun.",
+      },
+      {
+        id: "restaurante",
+        title: "Restaurante",
+        category: "Gastronomía",
+        categoryColor: "tertiary",
+        description:
+          "Saborea lo mejor de la gastronomía regional con ingredientes frescos de nuestro propio huerto. Disfruta platillos auténticos y refrescantes aguas de frutas naturales cosechadas en casa, del campo directo a tu mesa.",
+        iconName: "Utensils",
+        colSpan: "one-third",
+        ctaText: "Ver menú",
+        whatsappMessage:
+          "Hola, quiero información sobre el Restaurante y opciones gastronómicas en El Gran T´Zunun.",
+      },
+      {
+        id: "ceremonias",
+        title: "Ceremonias Ancestrales",
+        category: "Misticismo",
+        categoryColor: "secondary",
+        description:
+          "Reconecta con la sabiduría milenaria en nuestro espacio holístico maya. En un antiguo centro ceremonial, vive rituales y ceremonias ancestrales para sanar cuerpo, mente y espíritu a través de la energía de la naturaleza.",
+        iconName: "Sparkles",
+        colSpan: "two-thirds",
+        ctaText: "Agendar ceremonia",
+        whatsappMessage:
+          "Hola, quiero información para participar en las Ceremonias Ancestrales en El Gran T´Zunun.",
       },
       {
         id: "avistamiento-aves",
-        title: "Observación de Flora & Colibríes (T´Zunun)",
+        title: "Observación de Aves",
         category: "Contemplación",
-        categoryColor: "tertiary",
-        description:
-          "Recorridos pausados por jardines polinizadores y miradores silenciosos para fotografiar al colibrí maya y orquídeas endémicas.",
-        iconName: "Compass",
-        colSpan: "one-third",
-        ctaText: "Preguntar por recorridos",
-        whatsappMessage:
-          "Hola, quiero información sobre avistamiento de aves y senderos contemplativos en El Gran T´Zunun.",
-      },
-      {
-        id: "picnic-palapas",
-        title: "Palapas Privadas & Convivencia",
-        category: "Espacios Abiertos",
         categoryColor: "emerald",
         description:
-          "Áreas verdes con palapas frescas, juegos de mesa tradicionales y espacios tranquilos para desconectar del ritmo urbano.",
-        image: "/images/senderos-selva.svg",
-        colSpan: "two-thirds",
-        ctaText: "Reservar espacio familiar",
+          "Relájate con la sinfonía natural de nuestras aves en un entorno protegido. Una experiencia de contemplación que reduce el estrés y la ansiedad, mientras descubres especies que encuentran refugio y alimento en el parque.",
+        iconName: "Feather",
+        colSpan: "one-third",
+        ctaText: "Información de recorridos",
         whatsappMessage:
-          "Hola, me gustaría información sobre las palapas y áreas de convivencia en El Gran T´Zunun.",
+          "Hola, quiero información sobre los recorridos de Observación de Aves en El Gran T´Zunun.",
       },
     ] as ParkActivity[],
   },
@@ -489,7 +502,7 @@ export const es = {
   footer: {
     rightsReserved: "Todos los derechos reservados.",
     locationTagline:
-      "Península de Yucatán, México · Reserva Natural y Parque Ecoturístico",
+      "Campeche, México · Reserva Natural y Parque Ecoturístico",
     directContact: "Contacto Directo",
     directContactMsg:
       "Hola, quisiera información de contacto y cómo llegar a El Gran T´Zunun.",
@@ -518,7 +531,7 @@ export const es = {
       "¿Tienen comida vegetariana? ¿Requieren anticipo?...",
     submitBtn: "Continuar en WhatsApp",
     footerNote:
-      "Se abrirá un chat directo con nuestro equipo de atención en Yucatán.",
+      "Se abrirá un chat directo con nuestro equipo de atención en Campeche.",
     extraOptions: {
       jungleRoom: "Habitación Confort Selva",
       glampingSuite: "Suite Glamping & Jacuzzi",
@@ -555,7 +568,7 @@ export const es = {
         ". Nuestro parque honra a este mensajero de vida protegiendo su hábitat natural y ofreciendo a cada visitante un santuario de renovación y alegría.",
       missionTitle: "Nuestra Misión Ecológica",
       missionDesc:
-        "Preservar la riqueza biocultural de la Península de Yucatán mediante experiencias de aventura y descanso que respetan la flora, la fauna y las tradiciones de las comunidades mayas.",
+        "Preservar la riqueza biocultural de Campeche mediante experiencias de aventura y descanso que respetan la flora, la fauna y las tradiciones de las comunidades mayas.",
       statProtectedLabel: "Reserva Protegida",
       statBirdSpeciesLabel: "Especies de Aves",
       timelineEyebrow: "Nuestra Evolución",
