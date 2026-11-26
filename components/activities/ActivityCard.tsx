@@ -41,9 +41,13 @@ export function ActivityCard({ activity }: ActivityCardProps) {
 
   // Determine span classes
   const spanClass =
-    activity.colSpan === "two-thirds"
-      ? "md:col-span-8 min-h-[360px]"
-      : "md:col-span-4 min-h-[300px]";
+    activity.colSpan === "full"
+      ? "md:col-span-12 min-h-[320px]"
+      : activity.colSpan === "two-thirds"
+        ? "md:col-span-8 min-h-[360px]"
+        : activity.colSpan === "half"
+          ? "md:col-span-6 min-h-[300px]"
+          : "md:col-span-4 min-h-[300px]";
 
   if (isImageCard) {
     return (

@@ -1,9 +1,13 @@
 import {
   ParkActivity,
-  DayPassPackage,
   LodgingOption,
   GastronomyPillar,
   ExperienceItem,
+  PackageCategory,
+  PackageId,
+  PackageTranslationItem,
+  PackageUnitKey,
+  VisitorTier,
 } from "@/types";
 
 export const es = {
@@ -120,7 +124,7 @@ export const es = {
         description:
           "Alcanza la cima en un muro de 12 metros con retos para novatos (desde los 5 años) y escaladores avanzados. Pon a prueba tu fuerza y concentración con equipo certificado y total seguridad guiada.",
         iconName: "Mountain",
-        colSpan: "one-third",
+        colSpan: "half",
         ctaText: "Detalles de rapel",
         whatsappMessage:
           "Hola, quiero información sobre el muro de Rapel en El Gran T´Zunun.",
@@ -133,7 +137,7 @@ export const es = {
         description:
           "Conéctate con la naturaleza en una caminata guiada por la selva. Descubre los secretos de árboles medicinales y energéticos, mientras aprendes a coexistir con la fauna local en un recorrido para renovar cuerpo y mente.",
         iconName: "Leaf",
-        colSpan: "one-third",
+        colSpan: "half",
         ctaText: "Ver rutas guiadas",
         whatsappMessage:
           "Hola, quiero información sobre las rutas de Senderismo en El Gran T´Zunun.",
@@ -219,7 +223,7 @@ export const es = {
         description:
           "Reconecta con la sabiduría milenaria en nuestro espacio holístico maya. En un antiguo centro ceremonial, vive rituales y ceremonias ancestrales para sanar cuerpo, mente y espíritu a través de la energía de la naturaleza.",
         iconName: "Sparkles",
-        colSpan: "two-thirds",
+        colSpan: "one-third",
         ctaText: "Agendar ceremonia",
         whatsappMessage:
           "Hola, quiero información para participar en las Ceremonias Ancestrales en El Gran T´Zunun.",
@@ -241,125 +245,433 @@ export const es = {
   },
   packagesSection: {
     eyebrow: "Tarifas Transparentes",
-    title: "Elige tu Paquete Pasadía",
+    title: "Tarifas y Paquetes Oficiales",
     description:
-      "Pasa un día inolvidable con accesos diseñados para toda la familia. Reserva tu fecha con confirmación instantánea vía WhatsApp.",
+      "Consulta nuestras tarifas reales para visitantes locales, nacionales y extranjeros en pasadía, actividades extremas, hospedaje y campismo.",
+    visitorTierLabel: "Perfil de visitante",
+    tiers: {
+      local: "Locales (Campeche)",
+      national: "Nacionales (México)",
+      foreigner: "Extranjeros (USD)",
+    } satisfies Record<VisitorTier, string>,
+    tiersShort: {
+      local: "Local (Campeche)",
+      national: "Nacional (México)",
+      foreigner: "Extranjero",
+    } satisfies Record<VisitorTier, string>,
+    categoryTabLabel: "Categoría de servicio",
+    categories: {
+      daypass: {
+        label: "Pasadía",
+        policyTitle: "Horarios y Políticas de Pasadía",
+        policyText:
+          "De jueves a domingo de 10:00 a 17:00 horas. En días festivos, puentes y vacaciones abrimos todos los días. Niños menores de 6 años no pagan en pasadía. No se permite la entrada con alimentos y bebidas.",
+      },
+      extreme: {
+        label: "Actividades Extremas",
+        policyTitle: "Horarios y Políticas de Actividades Extremas",
+        policyText:
+          "El servicio general opera de 10:00 a 16:00 horas, sujeto a suspensión por lluvias o calor extremo (12:00 a 15:00), complementado por turnos diurnos (6:00–11:00 y 15:00–19:00) y nocturnos (20:00–00:00). Las rutas guiadas requieren mínimo 10 personas e incluyen botiquín, sanitarios y apoyo en traslado de lesionados.",
+      },
+      lodging: {
+        label: "Hospedaje",
+        policyTitle: "Información de Hospedaje y Transporte",
+        policyText:
+          "Tarifas para visitantes locales y nacionales en pesos mexicanos (MXN); tarifas para extranjeros en dólares (USD). Contamos con opciones adicionales de transportación redonda para grupos pequeños y autobuses.",
+      },
+      camping: {
+        label: "Campismo",
+        policyTitle: "Modalidades y Políticas de Campismo",
+        policyText:
+          "Acampa con tu propia casa de campaña o renta casa equipada con colchoneta, acceso a sanitarios y albercas. Tarifas especiales para scouts, escuelas y grupos mayores a 10 personas.",
+      },
+    } satisfies Record<
+      PackageCategory,
+      { label: string; policyTitle: string; policyText: string }
+    >,
+    subcategories: {
+      standardTitle: "Habitación Estándar",
+      standardSubtitle:
+        "Base matrimonial con agua caliente y aire acondicionado",
+      suiteTitle: "Habitación Suite",
+      suiteSubtitle:
+        "Cama King Size con amplitud ideal para parejas y familias",
+      transportSectionTitle: "Opciones de Transportación",
+      lodgingTransportBannerTitle:
+        "Opciones de transporte adicionales disponibles:",
+      lodgingTransportSmallTemplate:
+        "Transportación redonda (1 a 4 personas): {price} / persona",
+      lodgingTransportBusTemplate:
+        "Bus para grupos grandes (20 a 50 personas): {price} / persona",
+    },
+    units: {
+      minor: "menor",
+      adult: "adulto",
+      person: "persona",
+      room: "habitación",
+      tent: "casa",
+    } satisfies Record<PackageUnitKey, string>,
     disclaimer:
-      "* Precios en pesos mexicanos (MXN). Grupos de más de 10 personas reciben descuento adicional solicitándolo por WhatsApp.",
+      "* Tarifas oficiales sujetas a disponibilidad de fecha. Locales (Campeche) y Nacionales (México) en MXN · Extranjeros en USD.",
     card: {
       popularBadgeDefault: "Más Popular",
-      reserveBestSeller: "Reservar Más Vendido",
+      minorRateBadgeTemplate: "Menores (6–11 años): {price}",
+      extraMinorNoBreakfastTemplate:
+        "Menores adicionales 6 a 11 años: {price} (no incluye desayuno)",
+      extraMinorIncludedTemplate: "Menores adicionales 6 a 11 años: {price}",
+      reserveBestSeller: "Reservar Paquete",
       calculateGroupWithPkg: "Calcular grupo con este paquete",
-      orderByWhatsapp: "Pedir por WhatsApp",
-      calculateGroup: "Calcular grupo",
+      orderByWhatsapp: "Reservar Ahora",
+      calculateGroup: "Cotizar en calculadora",
     },
-    items: [
-      {
-        id: "pasadia-menores",
+    catalog: {
+      "daypass-minors": {
         name: "Pasadía Menores",
-        audience: "Niños (4-11 años)",
-        subtitle: "Diversión segura en la selva",
-        price: 299,
-        currency: "MXN",
-        unit: "menor",
+        audience: "Menores (6 a 11 años)",
+        subtitle: "Diversión segura en albercas y naturaleza",
         features: [
-          "Acceso completo al parque",
-          "Albercas naturales y chapoteadero",
-          "Tirolesa infantil supervisada",
-          "Senderismo de fauna",
+          "Acceso al parque (10:00 a 17:00 h)",
+          "Uso de albercas familiares y áreas verdes",
+          "Sanitarios y regaderas ecológicas",
+          "Niños menores de 6 años no pagan en pasadía",
         ],
-        whatsappMessage:
-          "Hola, quiero reservar el paquete Pasadía Menores ($299 MXN) en El Gran T´Zunun.",
       },
-      {
-        id: "pasadia-adultos",
+      "daypass-adults": {
         name: "Pasadía Adultos",
-        audience: "Adultos (+12 años)",
-        subtitle: "Acción y aventura pura",
-        price: 499,
-        currency: "MXN",
-        unit: "adulto",
+        audience: "Adultos (12+ años)",
+        subtitle: "Descanso y conexión con la selva",
         features: [
-          "Tirolesas de alta velocidad",
-          "Circuito de retos Exatlón",
-          "Nado en cenote & albercas",
-          "Equipo y arnés certificado",
+          "Acceso al parque (10:00 a 17:00 h)",
+          "Uso de albercas familiares y senderos",
+          "Áreas de descanso y sanitarios",
+          "Ambiente familiar libre de alimentos externos",
         ],
-        whatsappMessage:
-          "Hola, quiero reservar el paquete Pasadía Adultos ($499 MXN) en El Gran T´Zunun.",
       },
-      {
-        id: "menores-almuerzo",
-        name: "Menores + Almuerzo",
-        audience: "Todo Incluido Niños",
-        subtitle: "Pasadía con comida campestre",
-        price: 449,
-        currency: "MXN",
-        unit: "menor",
+      "daypass-lunch-minors": {
+        name: "Pasadía + Almuerzo Menores",
+        audience: "Menores (6 a 11 años)",
+        subtitle: "Pasadía completo con comida tradicional",
         features: [
-          "Todo lo de Pasadía Menores",
-          "Almuerzo buffet / Menú infantil",
-          "Aguas frescas ilimitadas",
-          "Postre casero del día",
+          "Acceso completo de pasadía al parque",
+          "Uso de albercas y áreas recreativas",
+          "Almuerzo tradicional incluido",
+          "Sanitarios y regaderas ecológicas",
         ],
-        whatsappMessage:
-          "Hola, quiero reservar el paquete Menores + Almuerzo ($449 MXN) en El Gran T´Zunun.",
       },
-      {
-        id: "adultos-almuerzo",
-        name: "Adultos + Almuerzo",
-        audience: "Experiencia Completa",
-        subtitle: "Aventura sin preocupaciones",
-        price: 699,
-        currency: "MXN",
-        unit: "adulto",
-        isPopular: true,
+      "daypass-lunch-adults": {
+        name: "Pasadía + Almuerzo Adultos",
+        audience: "Adultos (12+ años)",
+        subtitle: "Experiencia campestre sin preocupaciones",
         highlightBadge: "Más Popular",
         features: [
-          "Pase total tirolesas & cenote",
-          "Buffet regional maya ilimitado",
-          "Poc chuc, cochinita y tortillas",
-          "Aguas frescas y café de olla",
+          "Acceso completo de pasadía al parque",
+          "Uso de albercas y zonas de descanso",
+          "Almuerzo regional incluido",
+          "Ideal para disfrutar en pareja o familia",
         ],
-        whatsappMessage:
-          "Hola, quiero reservar el paquete Más Vendido: Adultos + Almuerzo ($699 MXN) en El Gran T´Zunun.",
       },
-      {
-        id: "vip-transporte",
-        name: "VIP + Transporte",
-        audience: "VIP Premium",
-        subtitle: "Comodidad puerta a puerta",
-        price: 999,
-        currency: "MXN",
-        unit: "persona",
+      "daypass-lunch-transport": {
+        name: "Pasadía + Almuerzo + Transporte",
+        audience: "Mínimo 4 personas",
+        subtitle: "Comodidad redonda hasta el parque",
         features: [
-          "Transporte ida y vuelta",
-          "Todo incluido en actividades",
-          "Buffet maya preferente",
-          "Paquete fotográfico digital",
+          "Transportación redonda incluida",
+          "Acceso completo de pasadía y albercas",
+          "Almuerzo tradicional incluido",
+          "Aplica a partir de 4 personas",
         ],
-        whatsappMessage:
-          "Hola, quiero reservar el paquete VIP + Transporte ($999 MXN) en El Gran T´Zunun.",
       },
-    ] as DayPassPackage[],
+      "extreme-adventure": {
+        name: "Tirolesa + Exatlón + Alberca + Almuerzo",
+        audience: "Aventura Completa",
+        subtitle: "Adrenalina en las alturas y gastronomía",
+        highlightBadge: "Más Popular",
+        features: [
+          "Circuito de tirolesas panorámicas",
+          "Retos aéreos en circuito Exatlón",
+          "Acceso a alberca y sanitarios",
+          "Almuerzo incluido y equipo certificado",
+        ],
+      },
+      "extreme-cacao": {
+        name: "Tirolesa + Exatlón + Alberca + Almuerzo + Ceremonia del Cacao",
+        audience: "Aventura & Cultura Maya",
+        subtitle: "Adrenalina extrema y ritual ancestral",
+        features: [
+          "Circuito de Tirolesa y Exatlón",
+          "Ceremonia del Cacao Maya incluida",
+          "Acceso a alberca y sanitarios",
+          "Almuerzo regional incluido",
+        ],
+      },
+      "extreme-transport-daypass": {
+        name: "Transporte + Pasadía + Almuerzo",
+        audience: "Mínimo 4 personas",
+        subtitle: "Traslado redondo y día recreativo",
+        features: [
+          "Transportación redonda incluida",
+          "Acceso de pasadía y albercas",
+          "Almuerzo tradicional incluido",
+          "Requiere mínimo 4 personas",
+        ],
+      },
+      "transport-roundtrip-small": {
+        name: "Transportación Redonda (1 a 4 personas)",
+        audience: "Grupos de 1 a 4 personas",
+        subtitle: "Traslado cómodo ida y vuelta",
+        features: [
+          "Servicio de transporte redondo al parque",
+          "Válido para grupos de 1 a 4 personas",
+          "Horarios coordinados vía WhatsApp",
+        ],
+      },
+      "transport-bus-large": {
+        name: "Bus para Grupos Grandes (20 a 50 personas)",
+        audience: "Más de 20 y hasta 50 personas",
+        subtitle: "Logística grupal, escolar o corporativa",
+        features: [
+          "Autobús redondo para grupos grandes",
+          "Capacidad de 20 hasta 50 personas",
+          "Ideal para excursiones y rutas guiadas",
+        ],
+      },
+      "lodging-std-breakfast-2": {
+        name: "Estándar Desayuno (2 personas)",
+        audience: "2 personas",
+        subtitle:
+          "Base matrimonial, agua caliente, AA, desayuno incluido para 2 personas.",
+        features: [
+          "Base matrimonial para 2 personas",
+          "Agua caliente y aire acondicionado (AA)",
+          "Desayuno incluido para 2 personas",
+          "Acceso a albercas y áreas naturales",
+        ],
+      },
+      "lodging-std-allinc-1": {
+        name: "Estándar Todo Incluido (1 persona)",
+        audience: "1 persona",
+        subtitle:
+          "Base matrimonial, agua caliente, AA, desayuno, almuerzo y cena para 1 persona.",
+        features: [
+          "Base matrimonial individual",
+          "Agua caliente y aire acondicionado (AA)",
+          "Desayuno, almuerzo y cena (1 persona)",
+          "Acceso a albercas e instalaciones",
+        ],
+      },
+      "lodging-std-allinc-2": {
+        name: "Estándar Todo Incluido (2 personas)",
+        audience: "2 personas",
+        subtitle:
+          "Base matrimonial, agua caliente, AA, desayuno, almuerzo y cena para 2 personas.",
+        features: [
+          "Base matrimonial para 2 personas",
+          "Agua caliente y aire acondicionado (AA)",
+          "Desayuno, almuerzo y cena (2 personas)",
+          "Estancia completa sin preocupaciones",
+        ],
+      },
+      "lodging-std-adventure-2": {
+        name: "Estándar Aventura Todo Incluido (2 personas)",
+        audience: "2 personas",
+        subtitle:
+          "Base matrimonial, agua caliente, AA + desayuno, almuerzo y cena + Tirolesa o Exatlón para 2 personas.",
+        highlightBadge: "Más Completo",
+        features: [
+          "Base matrimonial, agua caliente y AA",
+          "Desayuno, almuerzo y cena (2 personas)",
+          "Tirolesa o Exatlón para 2 personas",
+          "Acceso a albercas y senderos",
+        ],
+      },
+      "lodging-suite-breakfast": {
+        name: "Suite Desayuno (2 adultos y 1 menor)",
+        audience: "2 adultos y 1 menor",
+        subtitle:
+          "Cama king size, agua caliente, AA, desayuno incluido para 2 personas y un menor.",
+        features: [
+          "Cama King Size, agua caliente y AA",
+          "Desayuno incluido para 2 adultos y 1 menor",
+          "Acceso a albercas y áreas del parque",
+        ],
+      },
+      "lodging-suite-allinc": {
+        name: "Suite Todo Incluido (2 personas)",
+        audience: "2 personas",
+        subtitle:
+          "Cama king size, agua caliente, desayuno, almuerzo y cena para 2 personas.",
+        highlightBadge: "Confort Suite",
+        features: [
+          "Cama King Size y agua caliente",
+          "Desayuno, almuerzo y cena para 2 personas",
+          "Acceso a albercas y zonas de descanso",
+        ],
+      },
+      "lodging-suite-adventure": {
+        name: "Suite Aventura (2 personas)",
+        audience: "2 personas",
+        subtitle:
+          "Cama king size, agua caliente, AA, desayuno incluido + Tirolesa o Exatlón para 2 personas.",
+        features: [
+          "Cama King Size, agua caliente y AA",
+          "Desayuno incluido para 2 personas",
+          "Tirolesa o Exatlón para 2 personas",
+        ],
+      },
+      "camping-basic": {
+        name: "Acceso Básico (Casa Propia)",
+        audience: "Casa de campaña propia",
+        subtitle:
+          "Acceso al parque cuando el cliente lleva su propia casa de campaña y solo requiere el área de acampado y sanitarios.",
+        features: [
+          "Espacio en área de acampado",
+          "Acceso a sanitarios",
+          "Cliente lleva su propia casa de campaña",
+        ],
+      },
+      "camping-pool": {
+        name: "Acceso + Alberca (Casa Propia)",
+        audience: "Casa de campaña propia",
+        subtitle:
+          "Acceso al parque cuando el cliente lleva su casa de campaña y requiere el área de acampado, sanitarios y alberca.",
+        features: [
+          "Espacio en área de acampado",
+          "Acceso a sanitarios y alberca",
+          "Cliente lleva su propia casa de campaña",
+        ],
+      },
+      "camping-tent-2": {
+        name: "Renta Casa de Campaña (2 personas)",
+        audience: "2 personas",
+        subtitle:
+          "Renta de casa de campaña para 2 personas, incluye colchoneta, acceso a sanitarios y albercas.",
+        highlightBadge: "Más Popular",
+        features: [
+          "Casa de campaña para 2 personas",
+          "Incluye colchoneta",
+          "Acceso a sanitarios y albercas",
+        ],
+      },
+      "camping-tent-3": {
+        name: "Renta Casa de Campaña (3 personas)",
+        audience: "3 personas",
+        subtitle:
+          "Renta de casa de campaña para 3 personas, incluye colchoneta, acceso a sanitarios y albercas.",
+        features: [
+          "Casa de campaña para 3 personas",
+          "Incluye colchoneta",
+          "Acceso a sanitarios y albercas",
+        ],
+      },
+      "camping-tent-5": {
+        name: "Renta Casa de Campaña (5 personas)",
+        audience: "5 personas",
+        subtitle:
+          "Renta de casa de campaña para 5 personas, incluye colchoneta, acceso a sanitarios y albercas.",
+        features: [
+          "Casa de campaña para 5 personas",
+          "Incluye colchoneta",
+          "Acceso a sanitarios y albercas",
+        ],
+      },
+      "camping-groups": {
+        name: "Grupos / Scouts / Escuelas",
+        audience: ">10 personas · Casa propia",
+        subtitle:
+          "Scouts, escuelas y grupos mayores a 10 personas, trayendo su casa de campaña, acceso a sanitarios y alberca.",
+        features: [
+          "Scouts, escuelas y grupos (>10 personas)",
+          "Trayendo su casa de campaña",
+          "Acceso a sanitarios y alberca",
+        ],
+      },
+    } satisfies Record<PackageId, PackageTranslationItem>,
+    calculatorCombinedPackages: {
+      "calc-daypass-general": {
+        name: "Pasadía General (Acceso al Parque)",
+        subtitle:
+          "Calcula automáticamente tarifa de Adultos (12+), Menores (6–11) y Niños (<6 gratis).",
+      },
+      "calc-daypass-lunch": {
+        name: "Pasadía + Almuerzo",
+        subtitle:
+          "Calcula automáticamente tarifa de Adultos (12+) y Menores (6–11) con almuerzo incluido.",
+      },
+    },
     calculator: {
       eyebrow: "Herramienta Rápida",
       title: "Cotizador Express para Familias y Grupos",
       hideBtn: "Ocultar calculadora",
       showBtn: "Calcular mi total y enviar a WhatsApp",
-      basePackageLabel: "Paquete Base",
+      visitorTierLabel: "Perfil de Visitante",
+      categoryLabel: "Categoría",
+      basePackageLabel: "Paquete / Modalidad",
       visitorsCountLabel: "Número de Visitantes",
-      adultsLabel: "Adultos (+12)",
-      childrenLabel: "Niños (4-11)",
+      adultsLabel: "Adultos (12+)",
+      minorsLabel: "Menores (6–11)",
+      under6Label: "Niños (<6)",
+      freeUnder6Badge: "Gratis en pasadía",
       dateAndNameLabel: "Fecha Tentativa y Nombre",
       namePlaceholder: "Tu nombre (opcional)",
-      addTransportLabel: "Agregar transporte redondo (+$200 MXN / persona)",
-      groupDiscountBadge: "🎉 Descuento grupal de 10% aplicado (+10 personas)",
+      transportAddonLabel: "Transporte Redondo Opcional",
+      transportIncludedNote:
+        "Este paquete ya incluye transportación redonda.",
+      transportNoneOption: "Sin transporte adicional",
+      transportSmallOptionTemplate:
+        "Transportación redonda 1–4 personas (+{price} / persona)",
+      transportBusOptionTemplate:
+        "Bus grupos grandes 20–50 personas (+{price} / persona)",
+      guidedRouteLabel:
+        "Incluir ruta guiada (mínimo 10 personas, incluye botiquín y apoyo)",
+      optionAgeSplitTemplate: "{name} (Adulto {adultPrice} · Menor {minorPrice})",
+      optionFlatPriceTemplate: "{name} ({price})",
+      breakdownAdultsTemplate: "{count} adulto(s) × {price}",
+      breakdownMinorsTemplate: "{count} menor(es) (6–11) × {price}",
+      breakdownPersonsTemplate: "{count} persona(s) × {price}",
+      breakdownUnder6FreeTemplate: "{count} niño(s) (<6 gratis)",
+      breakdownUnder6CountTemplate: "{count} niño(s) (<6)",
+      breakdownRoomsTemplate: "{count} habitación(es) × {price}",
+      breakdownExtraMinorsTemplate: "{count} menor(es) extra × {price}",
+      breakdownTentsTemplate: "{count} casa(s) × {price}",
+      breakdownTransportTemplate: "Transporte ({count} × {price})",
       estimatedTotalLabel: "Total Estimado de tu visita:",
-      adultUnit: "adulto(s)",
-      childUnit: "niño(s)",
       subjectToConfirmation: "Sujeto a confirmación de fecha",
       sendQuoteBtn: "Enviar cotización a WhatsApp",
+      validations: {
+        minOneGuest:
+          "Selecciona al menos 1 visitante (adulto o menor de 6 a 11 años) para calcular tu total.",
+        minPackagePeopleTemplate:
+          "Este paquete requiere un mínimo de {min} personas (actualmente: {current}).",
+        maxPackagePeopleTemplate:
+          "Esta modalidad aplica para un máximo de {max} personas (actualmente: {current}).",
+        minTransportPeopleTemplate:
+          "La opción de transporte seleccionada requiere mínimo {min} pasajeros (actualmente: {current}).",
+        maxTransportPeopleTemplate:
+          "La opción de transporte seleccionada aplica hasta {max} pasajeros (actualmente: {current}).",
+        minGuidedRouteTemplate:
+          "Las rutas guiadas requieren un mínimo de {min} personas (actualmente: {current}).",
+      },
+      whatsappLabels: {
+        header: "🌿 *Cotización de Visita - El Gran T´Zunun* 🌿",
+        nameLabel: "👤 *Nombre:*",
+        visitorTierLabel: "🌎 *Tipo de visitante:*",
+        categoryLabel: "📂 *Categoría:*",
+        packageLabel: "🎟️ *Paquete:*",
+        guestsLabel: "👥 *Personas:*",
+        dateLabel: "📅 *Fecha tentativa:*",
+        transportLabel: "🚐 *Transporte:*",
+        guidedRouteLabel: "🧭 *Ruta guiada:*",
+        estimatedTotalLabel: "💵 *Total estimado:*",
+        notesLabel: "📝 *Comentarios:*",
+        footer:
+          "¿Me podrían confirmar disponibilidad y el proceso de pago/reserva? ¡Muchas gracias!",
+      },
+      whatsappValues: {
+        transportIncluded: "Incluido en el paquete",
+        transportSmall: "Transportación redonda (1 a 4 personas)",
+        transportBus: "Bus para grupos grandes (20 a 50 personas)",
+        guidedRouteYes: "Solicitada (mínimo 10 personas)",
+      },
     },
   },
   experiencesSection: {
@@ -523,28 +835,33 @@ export const es = {
     closeAria: "Cerrar ventana",
     nameLabel: "Tu Nombre",
     namePlaceholder: "Ej. Carlos Mendoza",
+    visitorTierLabel: "Tipo de Visitante",
+    categoryLabel: "Categoría",
     packageLabel: "Experiencia / Paquete",
-    peopleLabel: "Personas",
+    adultsLabel: "Adultos (12+)",
+    minorsLabel: "Menores (6–11)",
+    under6Label: "Niños (<6)",
     dateLabel: "Fecha Tentativa",
+    transportLabel: "Transporte Redondo Opcional",
     notesLabel: "Preguntas o requerimientos adicionales (opcional)",
     notesPlaceholder:
       "¿Tienen comida vegetariana? ¿Requieren anticipo?...",
+    estimatedTotalLabel: "Total estimado:",
     submitBtn: "Continuar en WhatsApp",
     footerNote:
       "Se abrirá un chat directo con nuestro equipo de atención en Campeche.",
-    extraOptions: {
-      jungleRoom: "Habitación Confort Selva",
-      glampingSuite: "Suite Glamping & Jacuzzi",
-      campingZone: "Zona de Camping",
-      schoolOrGroup: "Visita Escolar o Grupo Grande",
-    },
     whatsappTemplate: {
       header: "🌿 *Solicitud de Reserva - El Gran T´Zunun* 🌿",
-      name: "👤 *Nombre:*",
-      package: "🎟️ *Paquete:*",
-      people: "👥 *Personas:*",
-      date: "📅 *Fecha tentativa:*",
-      notes: "📝 *Comentarios:*",
+      nameLabel: "👤 *Nombre:*",
+      visitorTierLabel: "🌎 *Tipo de visitante:*",
+      categoryLabel: "📂 *Categoría:*",
+      packageLabel: "🎟️ *Paquete:*",
+      guestsLabel: "👥 *Personas:*",
+      dateLabel: "📅 *Fecha tentativa:*",
+      transportLabel: "🚐 *Transporte:*",
+      guidedRouteLabel: "🧭 *Ruta guiada:*",
+      estimatedTotalLabel: "💵 *Total estimado:*",
+      notesLabel: "📝 *Comentarios:*",
       footer: "¿Me confirman disponibilidad por favor?",
     },
   },
@@ -643,7 +960,7 @@ export const es = {
         {
           title: "Acceso, Hospedaje y Zona de Camping",
           rules: [
-            "Horario general de pasadía: 9:00 AM a 5:00 PM. Huéspedes de cabañas, glamping y camping cuentan con acceso preferente 24/7.",
+            "Horario general de pasadía: jueves a domingo de 10:00 a 17:00 horas (abierto todos los días en festivos, puentes y vacaciones). Huéspedes de habitaciones y camping cuentan con acceso preferente.",
             "Las fogatas nocturnas se realizan exclusivamente en los círculos delimitados y bajo supervisión del personal del parque.",
             "No se permite el ingreso de bebidas alcohólicas externas ni envases de vidrio.",
             "A partir de las 10:30 PM se solicita mantener silencio moderado en las áreas de cabañas y camping para respetar el descanso y los sonidos de la selva.",

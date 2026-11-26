@@ -8,7 +8,7 @@ export function RecreationSection() {
   const { t } = useTranslation();
 
   return (
-    <section className="w-full py-20 bg-white scroll-mt-24" id="recreacion-descanso">
+    <section className="w-full pt-20 pb-10 md:pb-12 bg-white scroll-mt-24" id="recreacion-descanso">
       <div className="max-w-[1280px] mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="max-w-2xl mb-12">

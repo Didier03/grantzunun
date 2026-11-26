@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { ReservationPreset } from "@/types";
 import { Navbar } from "@/components/layout/Navbar";
 import { HeroSection } from "@/components/hero/HeroSection";
 import { ActivitiesBento } from "@/components/activities/ActivitiesBento";
@@ -16,11 +17,22 @@ import { QuickReservationModal } from "@/components/modal/QuickReservationModal"
 
 export default function HomePage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalPreset, setModalPreset] = useState<ReservationPreset | null>(null);
+
+  const handleOpenModalFromNavbar = () => {
+    setModalPreset(null);
+    setIsModalOpen(true);
+  };
+
+  const handleOpenModalWithPreset = (preset: ReservationPreset) => {
+    setModalPreset(preset);
+    setIsModalOpen(true);
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-[#f7f9fb] text-[#191c1e] font-sans antialiased overflow-x-hidden selection:bg-[#85f8c4] selection:text-[#002114]">
       {/* Top Fixed Navigation */}
-      <Navbar onOpenReserveModal={() => setIsModalOpen(true)} />
+      <Navbar onOpenReserveModal={handleOpenModalFromNavbar} />
 
       {/* Main Landing Page Content */}
       <main className="flex-1 flex flex-col w-full">
@@ -33,8 +45,8 @@ export default function HomePage() {
         {/* Recreation & Relaxation Activities */}
         <RecreationSection />
 
-        {/* Transparent Rates & Day Pass Packages + Group Calculator */}
-        <PackagesSection />
+        {/* Official Rates, Categories & Group Calculator */}
+        <PackagesSection onOpenReserveModal={handleOpenModalWithPreset} />
 
         {/* Curated Cultural & Nature Experiences */}
         <ExperiencesSection />
@@ -59,6 +71,7 @@ export default function HomePage() {
       <QuickReservationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
+        preset={modalPreset}
       />
     </div>
   );
