@@ -114,7 +114,7 @@ export const en: Dictionary = {
         description:
           "Reach the top on a 12-meter wall with challenges for beginners (from 5 years old) and advanced climbers. Test your strength and concentration with certified equipment and total guided security.",
         iconName: "Mountain",
-        colSpan: "one-third",
+        colSpan: "half",
         ctaText: "Rappelling details",
         whatsappMessage:
           "Hello, I want information about Rappelling at El Gran T´Zunun.",
@@ -127,7 +127,7 @@ export const en: Dictionary = {
         description:
           "Connect with nature on a guided walk through the jungle. Discover the secrets of medicinal and energetic trees while learning to coexist with local fauna on a journey to renew body and mind.",
         iconName: "Leaf",
-        colSpan: "one-third",
+        colSpan: "half",
         ctaText: "See guided routes",
         whatsappMessage:
           "Hello, I want information about Guided Hiking at El Gran T´Zunun.",
@@ -213,7 +213,7 @@ export const en: Dictionary = {
         description:
           "Reconnect with ancient wisdom in our Mayan holistic space. In an ancient ceremonial center, experience ancestral rituals and ceremonies to heal body, mind, and spirit through the energy of nature.",
         iconName: "Sparkles",
-        colSpan: "two-thirds",
+        colSpan: "one-third",
         ctaText: "Schedule ceremony",
         whatsappMessage:
           "Hello, I want information to participate in the Ancestral Ceremonies at El Gran T´Zunun.",
@@ -235,125 +235,430 @@ export const en: Dictionary = {
   },
   packagesSection: {
     eyebrow: "Transparent Rates",
-    title: "Choose Your Day Pass Package",
+    title: "Official Rates & Packages",
     description:
-      "Spend an unforgettable day with passes designed for the whole family. Book your date with instant confirmation via WhatsApp.",
+      "Explore our official rates for local, Mexican national, and international visitors across day passes, extreme activities, lodging, and camping.",
+    visitorTierLabel: "Visitor profile",
+    tiers: {
+      local: "Locals (Campeche)",
+      national: "Nationals (Mexico)",
+      foreigner: "Foreigners (USD)",
+    },
+    tiersShort: {
+      local: "Local (Campeche)",
+      national: "National (Mexico)",
+      foreigner: "Foreigner",
+    },
+    categoryTabLabel: "Service category",
+    categories: {
+      daypass: {
+        label: "Daypass",
+        policyTitle: "Daypass Hours & Policies",
+        policyText:
+          "Thursday to Sunday from 10:00 AM to 5:00 PM. Open every day on holidays, long weekends, and school vacations. Children under 6 enter free on Daypass. Outside food and beverages are not allowed.",
+      },
+      extreme: {
+        label: "Extreme Activities",
+        policyTitle: "Extreme Activities Hours & Policies",
+        policyText:
+          "General service operates from 10:00 AM to 4:00 PM, subject to suspension due to rain or extreme heat (12:00 PM – 3:00 PM), complemented by daytime shifts (6:00–11:00 AM and 3:00–7:00 PM) and night shifts (8:00 PM – 12:00 AM). Guided routes require a minimum of 10 people and include a first-aid kit, restrooms, and assistance transferring injured visitors.",
+      },
+      lodging: {
+        label: "Lodging",
+        policyTitle: "Lodging & Transport Information",
+        policyText:
+          "Rates for local and Mexican national guests are in Mexican Pesos (MXN); rates for foreign visitors are in US Dollars (USD). Optional round-trip transportation is available for small groups and charter buses.",
+      },
+      camping: {
+        label: "Camping",
+        policyTitle: "Camping Options & Policies",
+        policyText:
+          "Camp with your own tent or rent an equipped tent including a sleeping mat, restroom access, and pools. Special rates available for scouts, schools, and groups of more than 10 people.",
+      },
+    },
+    subcategories: {
+      standardTitle: "Standard Room",
+      standardSubtitle:
+        "Double bed room with hot water and air conditioning",
+      suiteTitle: "Suite Room",
+      suiteSubtitle:
+        "King-size bed with extra comfort for couples and families",
+      transportSectionTitle: "Transportation Options",
+      lodgingTransportBannerTitle:
+        "Additional round-trip transport options:",
+      lodgingTransportSmallTemplate:
+        "Round-trip transport (1 to 4 people): {price} / person",
+      lodgingTransportBusTemplate:
+        "Bus for large groups (20 to 50 people): {price} / person",
+    },
+    units: {
+      minor: "minor",
+      adult: "adult",
+      person: "person",
+      room: "room",
+      tent: "tent",
+    },
     disclaimer:
-      "* Prices in Mexican Pesos (MXN). Groups of 10 or more receive an additional discount when booking via WhatsApp.",
+      "* Official rates subject to date availability. Locals (Campeche) & Nationals (Mexico) in MXN · Foreigners in USD.",
     card: {
       popularBadgeDefault: "Most Popular",
-      reserveBestSeller: "Book Best Seller",
+      minorRateBadgeTemplate: "Minors (6–11 yrs): {price}",
+      extraMinorNoBreakfastTemplate:
+        "Additional children 6–11 years: {price} (breakfast not included)",
+      extraMinorIncludedTemplate: "Additional children 6–11 years: {price}",
+      reserveBestSeller: "Book Package",
       calculateGroupWithPkg: "Calculate group with this package",
-      orderByWhatsapp: "Book via WhatsApp",
-      calculateGroup: "Calculate group",
+      orderByWhatsapp: "Book Now",
+      calculateGroup: "Quote in calculator",
     },
-    items: [
-      {
-        id: "pasadia-menores",
-        name: "Kids Day Pass",
-        audience: "Children (4-11 yrs)",
-        subtitle: "Safe fun in the jungle",
-        price: 299,
-        currency: "MXN",
-        unit: "child",
+    catalog: {
+      "daypass-minors": {
+        name: "Daypass Minors",
+        audience: "Minors (6–11 yrs)",
+        subtitle: "Safe fun in pools & nature",
         features: [
-          "Full park access",
-          "Natural pools & kids splash area",
-          "Supervised kids zipline",
-          "Wildlife nature walk",
+          "Park access (10:00 AM – 5:00 PM)",
+          "Family swimming pools & green areas",
+          "Clean restrooms & eco-showers",
+          "Children under 6 enter free on Daypass",
         ],
-        whatsappMessage:
-          "Hi, I would like to book the Kids Day Pass ($299 MXN) at El Gran T´Zunun.",
       },
-      {
-        id: "pasadia-adultos",
-        name: "Adults Day Pass",
-        audience: "Adults (+12 yrs)",
-        subtitle: "Pure action & adventure",
-        price: 499,
-        currency: "MXN",
-        unit: "adult",
+      "daypass-adults": {
+        name: "Daypass Adults",
+        audience: "Adults (12+ yrs)",
+        subtitle: "Relaxation & connection with the jungle",
         features: [
-          "High-speed zipline circuit",
-          "Exatlón obstacle challenge",
-          "Cenote & eco-pool swimming",
-          "Certified harness & safety gear",
+          "Park access (10:00 AM – 5:00 PM)",
+          "Family swimming pools & nature trails",
+          "Rest areas & restroom facilities",
+          "Outside food and beverages not allowed",
         ],
-        whatsappMessage:
-          "Hi, I would like to book the Adults Day Pass ($499 MXN) at El Gran T´Zunun.",
       },
-      {
-        id: "menores-almuerzo",
-        name: "Kids + Lunch",
-        audience: "All-Inclusive Kids",
-        subtitle: "Day pass with country lunch",
-        price: 449,
-        currency: "MXN",
-        unit: "child",
+      "daypass-lunch-minors": {
+        name: "Daypass + Lunch Minors",
+        audience: "Minors (6–11 yrs)",
+        subtitle: "Full day pass with traditional meal",
         features: [
-          "Everything in Kids Day Pass",
-          "Buffet lunch / Kids menu",
-          "Unlimited fresh fruit waters",
-          "Homemade dessert of the day",
+          "Full Daypass park access",
+          "Swimming pools & recreational areas",
+          "Traditional lunch included",
+          "Restrooms & eco-showers",
         ],
-        whatsappMessage:
-          "Hi, I would like to book the Kids + Lunch package ($449 MXN) at El Gran T´Zunun.",
       },
-      {
-        id: "adultos-almuerzo",
-        name: "Adults + Lunch",
-        audience: "Full Experience",
-        subtitle: "Worry-free adventure",
-        price: 699,
-        currency: "MXN",
-        unit: "adult",
-        isPopular: true,
+      "daypass-lunch-adults": {
+        name: "Daypass + Lunch Adults",
+        audience: "Adults (12+ yrs)",
+        subtitle: "Worry-free countryside experience",
         highlightBadge: "Most Popular",
         features: [
-          "Full pass to ziplines & cenote",
-          "Unlimited regional Mayan buffet",
-          "Poc chuc, cochinita & handmade tortillas",
-          "Fresh fruit waters & spiced pot coffee",
+          "Full Daypass park access",
+          "Swimming pools & relaxation areas",
+          "Regional lunch included",
+          "Ideal for couples, friends & families",
         ],
-        whatsappMessage:
-          "Hi, I would like to book the Best Seller package: Adults + Lunch ($699 MXN) at El Gran T´Zunun.",
       },
-      {
-        id: "vip-transporte",
-        name: "VIP + Transport",
-        audience: "VIP Premium",
-        subtitle: "Door-to-door comfort",
-        price: 999,
-        currency: "MXN",
-        unit: "person",
+      "daypass-lunch-transport": {
+        name: "Daypass + Lunch + Transport",
+        audience: "Min. 4 people",
+        subtitle: "Door-to-door round-trip comfort",
         features: [
-          "Round-trip transportation",
-          "All-inclusive park activities",
-          "Priority Mayan buffet seating",
-          "Digital photo package",
+          "Round-trip transportation included",
+          "Full Daypass & swimming pool access",
+          "Traditional lunch included",
+          "Valid for groups of 4 or more",
         ],
-        whatsappMessage:
-          "Hi, I would like to book the VIP + Transport package ($999 MXN) at El Gran T´Zunun.",
       },
-    ],
+      "extreme-adventure": {
+        name: "Zipline + Exathlon + Pool + Lunch",
+        audience: "Full Adventure",
+        subtitle: "Canopy thrills & regional dining",
+        highlightBadge: "Most Popular",
+        features: [
+          "Panoramic canopy zipline circuit",
+          "Exathlon aerial challenge course",
+          "Swimming pool & restroom access",
+          "Lunch included & certified safety gear",
+        ],
+      },
+      "extreme-cacao": {
+        name: "Zipline + Exathlon + Pool + Lunch + Cacao Ceremony",
+        audience: "Adventure & Mayan Culture",
+        subtitle: "Extreme adrenaline & ancestral ritual",
+        features: [
+          "Zipline & Exathlon adventure circuits",
+          "Mayan Cacao Ceremony included",
+          "Swimming pool & restroom access",
+          "Regional lunch included",
+        ],
+      },
+      "extreme-transport-daypass": {
+        name: "Transport + Daypass + Lunch",
+        audience: "Min. 4 people",
+        subtitle: "Round-trip transfer & leisure day",
+        features: [
+          "Round-trip transportation included",
+          "Daypass & swimming pool access",
+          "Traditional lunch included",
+          "Requires minimum of 4 people",
+        ],
+      },
+      "transport-roundtrip-small": {
+        name: "Round-Trip Transport (1 to 4 people)",
+        audience: "1 to 4 people",
+        subtitle: "Convenient round-trip transfer",
+        features: [
+          "Round-trip transfer to El Gran T´Zunun",
+          "Valid for groups of 1 to 4 people",
+          "Schedule coordinated via WhatsApp",
+        ],
+      },
+      "transport-bus-large": {
+        name: "Bus for Large Groups (20 to 50 people)",
+        audience: "20 to 50 people",
+        subtitle: "Group, school & corporate logistics",
+        features: [
+          "Round-trip bus for large groups",
+          "Capacity from 20 up to 50 people",
+          "Ideal for excursions & guided routes",
+        ],
+      },
+      "lodging-std-breakfast-2": {
+        name: "Standard Breakfast (2 people)",
+        audience: "2 people",
+        subtitle:
+          "Double room with hot water, air conditioning, and breakfast included for 2 people.",
+        features: [
+          "Double bed room for 2 people",
+          "Hot water & air conditioning (A/C)",
+          "Breakfast included for 2 people",
+          "Access to pools & nature areas",
+        ],
+      },
+      "lodging-std-allinc-1": {
+        name: "Standard All-Inclusive (1 person)",
+        audience: "1 person",
+        subtitle:
+          "Double room with hot water, air conditioning, breakfast, lunch, and dinner included for 1 person.",
+        features: [
+          "Double room for 1 guest",
+          "Hot water & air conditioning (A/C)",
+          "Breakfast, lunch & dinner (1 person)",
+          "Access to pools & park facilities",
+        ],
+      },
+      "lodging-std-allinc-2": {
+        name: "Standard All-Inclusive (2 people)",
+        audience: "2 people",
+        subtitle:
+          "Double room with hot water, air conditioning, breakfast, lunch, and dinner included for 2 people.",
+        features: [
+          "Double room for 2 people",
+          "Hot water & air conditioning (A/C)",
+          "Breakfast, lunch & dinner (2 people)",
+          "Worry-free full-board stay",
+        ],
+      },
+      "lodging-std-adventure-2": {
+        name: "Standard Adventure All-Inclusive (2 people)",
+        audience: "2 people",
+        subtitle:
+          "Double room with hot water, air conditioning, breakfast, lunch, and dinner, plus Zipline or Exathlon for 2 people.",
+        highlightBadge: "Best Value",
+        features: [
+          "Double bed, hot water & A/C",
+          "Breakfast, lunch & dinner (2 people)",
+          "Zipline or Exathlon for 2 people",
+          "Access to pools & jungle trails",
+        ],
+      },
+      "lodging-suite-breakfast": {
+        name: "Suite Breakfast (2 adults & 1 child)",
+        audience: "2 adults & 1 child",
+        subtitle:
+          "King-size bed, hot water, air conditioning, breakfast included for 2 adults and 1 child.",
+        features: [
+          "King-size bed, hot water & A/C",
+          "Breakfast included for 2 adults & 1 child",
+          "Access to pools & park areas",
+        ],
+      },
+      "lodging-suite-allinc": {
+        name: "Suite All-Inclusive (2 people)",
+        audience: "2 people",
+        subtitle:
+          "King-size bed, hot water, breakfast, lunch, and dinner for 2 adults.",
+        highlightBadge: "Suite Comfort",
+        features: [
+          "King-size bed & hot water",
+          "Breakfast, lunch & dinner for 2 adults",
+          "Access to pools & relaxation zones",
+        ],
+      },
+      "lodging-suite-adventure": {
+        name: "Suite Adventure (2 people)",
+        audience: "2 people",
+        subtitle:
+          "King-size bed, hot water, air conditioning, breakfast included + Zipline or Exathlon for 2 adults.",
+        features: [
+          "King-size bed, hot water & A/C",
+          "Breakfast included for 2 adults",
+          "Zipline or Exathlon for 2 adults",
+        ],
+      },
+      "camping-basic": {
+        name: "Basic Access (Own Tent)",
+        audience: "Bring your own tent",
+        subtitle:
+          "Park access when the guest brings their own tent and only requires the camping area and restrooms.",
+        features: [
+          "Camping area spot",
+          "Restroom access",
+          "Guest brings their own tent",
+        ],
+      },
+      "camping-pool": {
+        name: "Access + Pool (Own Tent)",
+        audience: "Bring your own tent",
+        subtitle:
+          "Park access when the guest brings their own tent, including the camping area, restrooms, and pool.",
+        features: [
+          "Camping area spot",
+          "Restroom & swimming pool access",
+          "Guest brings their own tent",
+        ],
+      },
+      "camping-tent-2": {
+        name: "Tent Rental (2 people)",
+        audience: "2 people",
+        subtitle:
+          "Tent rental for 2 people, includes sleeping mat, access to restrooms, and pools.",
+        highlightBadge: "Most Popular",
+        features: [
+          "Tent rental for 2 people",
+          "Includes sleeping mat",
+          "Access to restrooms & pools",
+        ],
+      },
+      "camping-tent-3": {
+        name: "Tent Rental (3 people)",
+        audience: "3 people",
+        subtitle:
+          "Tent rental for 3 people, includes sleeping mat, access to restrooms, and pools.",
+        features: [
+          "Tent rental for 3 people",
+          "Includes sleeping mat",
+          "Access to restrooms & pools",
+        ],
+      },
+      "camping-tent-5": {
+        name: "Tent Rental (5 people)",
+        audience: "5 people",
+        subtitle:
+          "Tent rental for 5 people, includes sleeping mat, access to restrooms, and pools.",
+        features: [
+          "Tent rental for 5 people",
+          "Includes sleeping mat",
+          "Access to restrooms & pools",
+        ],
+      },
+      "camping-groups": {
+        name: "Groups / Scouts / Schools",
+        audience: ">10 people · Own tent",
+        subtitle:
+          "Scouts, schools, and groups of more than 10 people, bringing their own tent, with access to restrooms and pool.",
+        features: [
+          "Scouts, schools & groups (>10 people)",
+          "Bringing their own tent",
+          "Access to restrooms & swimming pool",
+        ],
+      },
+    },
+    calculatorCombinedPackages: {
+      "calc-daypass-general": {
+        name: "General Daypass (Park Access)",
+        subtitle:
+          "Automatically applies Adult (12+), Minor (6–11), and Kids (<6 free) rates.",
+      },
+      "calc-daypass-lunch": {
+        name: "Daypass + Lunch",
+        subtitle:
+          "Automatically applies Adult (12+) and Minor (6–11) Daypass + Lunch rates.",
+      },
+    },
     calculator: {
       eyebrow: "Quick Tool",
       title: "Express Quote Calculator for Families & Groups",
       hideBtn: "Hide calculator",
       showBtn: "Calculate my total & send to WhatsApp",
-      basePackageLabel: "Base Package",
+      visitorTierLabel: "Visitor Profile",
+      categoryLabel: "Category",
+      basePackageLabel: "Package / Option",
       visitorsCountLabel: "Number of Visitors",
-      adultsLabel: "Adults (+12)",
-      childrenLabel: "Children (4-11)",
+      adultsLabel: "Adults (12+)",
+      minorsLabel: "Minors (6–11)",
+      under6Label: "Kids (<6)",
+      freeUnder6Badge: "Free on Daypass",
       dateAndNameLabel: "Tentative Date & Name",
       namePlaceholder: "Your name (optional)",
-      addTransportLabel: "Add round-trip transport (+$200 MXN / person)",
-      groupDiscountBadge: "🎉 10% group discount applied (+10 guests)",
+      transportAddonLabel: "Optional Round-Trip Transport",
+      transportIncludedNote:
+        "Round-trip transportation is already included in this package.",
+      transportNoneOption: "No additional transport",
+      transportSmallOptionTemplate:
+        "Round-trip transport 1–4 people (+{price} / person)",
+      transportBusOptionTemplate:
+        "Large group bus 20–50 people (+{price} / person)",
+      guidedRouteLabel:
+        "Include guided route (min. 10 people, includes first-aid kit & support)",
+      optionAgeSplitTemplate: "{name} (Adult {adultPrice} · Minor {minorPrice})",
+      optionFlatPriceTemplate: "{name} ({price})",
+      breakdownAdultsTemplate: "{count} adult(s) × {price}",
+      breakdownMinorsTemplate: "{count} minor(s) (6–11) × {price}",
+      breakdownPersonsTemplate: "{count} guest(s) × {price}",
+      breakdownUnder6FreeTemplate: "{count} kid(s) (<6 free)",
+      breakdownUnder6CountTemplate: "{count} kid(s) (<6)",
+      breakdownRoomsTemplate: "{count} room(s) × {price}",
+      breakdownExtraMinorsTemplate: "{count} extra child(ren) × {price}",
+      breakdownTentsTemplate: "{count} tent(s) × {price}",
+      breakdownTransportTemplate: "Transport ({count} × {price})",
       estimatedTotalLabel: "Estimated Total for your visit:",
-      adultUnit: "adult(s)",
-      childUnit: "child(ren)",
       subjectToConfirmation: "Subject to date confirmation",
       sendQuoteBtn: "Send quote to WhatsApp",
+      validations: {
+        minOneGuest:
+          "Select at least 1 guest (adult or minor aged 6–11) to calculate your total.",
+        minPackagePeopleTemplate:
+          "This package requires a minimum of {min} people (currently: {current}).",
+        maxPackagePeopleTemplate:
+          "This option applies up to a maximum of {max} people (currently: {current}).",
+        minTransportPeopleTemplate:
+          "The selected transport option requires at least {min} passengers (currently: {current}).",
+        maxTransportPeopleTemplate:
+          "The selected transport option allows up to {max} passengers (currently: {current}).",
+        minGuidedRouteTemplate:
+          "Guided routes require a minimum of {min} people (currently: {current}).",
+      },
+      whatsappLabels: {
+        header: "🌿 *Visit Quote - El Gran T´Zunun* 🌿",
+        nameLabel: "👤 *Name:*",
+        visitorTierLabel: "🌎 *Visitor type:*",
+        categoryLabel: "📂 *Category:*",
+        packageLabel: "🎟️ *Package:*",
+        guestsLabel: "👥 *Guests:*",
+        dateLabel: "📅 *Tentative date:*",
+        transportLabel: "🚐 *Transport:*",
+        guidedRouteLabel: "🧭 *Guided route:*",
+        estimatedTotalLabel: "💵 *Estimated total:*",
+        notesLabel: "📝 *Notes:*",
+        footer:
+          "Could you please confirm availability and the booking/payment process? Thank you!",
+      },
+      whatsappValues: {
+        transportIncluded: "Included in package",
+        transportSmall: "Round-trip transport (1 to 4 people)",
+        transportBus: "Bus for large groups (20 to 50 people)",
+        guidedRouteYes: "Requested (min. 10 people)",
+      },
     },
   },
   experiencesSection: {
@@ -517,28 +822,33 @@ export const en: Dictionary = {
     closeAria: "Close modal",
     nameLabel: "Your Name",
     namePlaceholder: "E.g. Alex Morgan",
+    visitorTierLabel: "Visitor Type",
+    categoryLabel: "Category",
     packageLabel: "Experience / Package",
-    peopleLabel: "Guests",
+    adultsLabel: "Adults (12+)",
+    minorsLabel: "Minors (6–11)",
+    under6Label: "Kids (<6)",
     dateLabel: "Tentative Date",
+    transportLabel: "Optional Round-Trip Transport",
     notesLabel: "Additional questions or requests (optional)",
     notesPlaceholder:
       "Do you have vegetarian options? Is a deposit required?...",
+    estimatedTotalLabel: "Estimated total:",
     submitBtn: "Continue on WhatsApp",
     footerNote:
       "A direct chat will open with our guest service team in Campeche.",
-    extraOptions: {
-      jungleRoom: "Jungle Comfort Cabin",
-      glampingSuite: "Glamping Suite & Jacuzzi",
-      campingZone: "Camping Zone",
-      schoolOrGroup: "School Trip or Large Group",
-    },
     whatsappTemplate: {
       header: "🌿 *Booking Request - El Gran T´Zunun* 🌿",
-      name: "👤 *Name:*",
-      package: "🎟️ *Package:*",
-      people: "👥 *Guests:*",
-      date: "📅 *Tentative date:*",
-      notes: "📝 *Notes:*",
+      nameLabel: "👤 *Name:*",
+      visitorTierLabel: "🌎 *Visitor type:*",
+      categoryLabel: "📂 *Category:*",
+      packageLabel: "🎟️ *Package:*",
+      guestsLabel: "👥 *Guests:*",
+      dateLabel: "📅 *Tentative date:*",
+      transportLabel: "🚐 *Transport:*",
+      guidedRouteLabel: "🧭 *Guided route:*",
+      estimatedTotalLabel: "💵 *Estimated total:*",
+      notesLabel: "📝 *Notes:*",
       footer: "Could you please confirm availability?",
     },
   },
@@ -637,7 +947,7 @@ export const en: Dictionary = {
         {
           title: "Park Access, Lodging & Camping Zone",
           rules: [
-            "General Day Pass hours: 9:00 AM to 5:00 PM. Cabin, glamping, and camping guests enjoy 24/7 priority access.",
+            "General Daypass hours: Thursday to Sunday from 10:00 AM to 5:00 PM (open every day on holidays, long weekends, and vacations). Room and camping guests enjoy priority access.",
             "Night bonfires are held exclusively in designated fire circles under park staff supervision.",
             "Outside alcoholic beverages and glass containers are not allowed.",
             "After 10:30 PM, moderate quiet is requested in cabin and camping areas to respect guests' rest and the natural sounds of the jungle.",

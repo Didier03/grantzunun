@@ -1,4 +1,5 @@
-import { ParkActivity, DayPassPackage, LodgingOption, GastronomyPillar, ExperienceItem } from "@/types";
+import { ParkActivity, LodgingOption, GastronomyPillar, ExperienceItem } from "@/types";
+import { PACKAGES_CATALOG } from "@/data/packages";
 
 export const PARK_INFO = {
   name: "El Gran T´Zunun",
@@ -174,90 +175,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
 ];
 
-export const PACKAGES: DayPassPackage[] = [
-  {
-    id: "pasadia-menores",
-    name: "Pasadía Menores",
-    audience: "Niños (4-11 años)",
-    subtitle: "Diversión segura en la selva",
-    price: 299,
-    currency: "MXN",
-    unit: "menor",
-    features: [
-      "Acceso completo al parque",
-      "Albercas naturales y chapoteadero",
-      "Tirolesa infantil supervisada",
-      "Senderismo de fauna",
-    ],
-    whatsappMessage: "Hola, quiero reservar el paquete Pasadía Menores ($299 MXN) en El Gran T´Zunun.",
-  },
-  {
-    id: "pasadia-adultos",
-    name: "Pasadía Adultos",
-    audience: "Adultos (+12 años)",
-    subtitle: "Acción y aventura pura",
-    price: 499,
-    currency: "MXN",
-    unit: "adulto",
-    features: [
-      "Tirolesas de alta velocidad",
-      "Circuito de retos Exatlón",
-      "Nado en cenote & albercas",
-      "Equipo y arnés certificado",
-    ],
-    whatsappMessage: "Hola, quiero reservar el paquete Pasadía Adultos ($499 MXN) en El Gran T´Zunun.",
-  },
-  {
-    id: "menores-almuerzo",
-    name: "Menores + Almuerzo",
-    audience: "Todo Incluido Niños",
-    subtitle: "Pasadía con comida campestre",
-    price: 449,
-    currency: "MXN",
-    unit: "menor",
-    features: [
-      "Todo lo de Pasadía Menores",
-      "Almuerzo buffet / Menú infantil",
-      "Aguas frescas ilimitadas",
-      "Postre casero del día",
-    ],
-    whatsappMessage: "Hola, quiero reservar el paquete Menores + Almuerzo ($449 MXN) en El Gran T´Zunun.",
-  },
-  {
-    id: "adultos-almuerzo",
-    name: "Adultos + Almuerzo",
-    audience: "Experiencia Completa",
-    subtitle: "Aventura sin preocupaciones",
-    price: 699,
-    currency: "MXN",
-    unit: "adulto",
-    isPopular: true,
-    highlightBadge: "Más Popular",
-    features: [
-      "Pase total tirolesas & cenote",
-      "Buffet regional maya ilimitado",
-      "Poc chuc, cochinita y tortillas",
-      "Aguas frescas y café de olla",
-    ],
-    whatsappMessage: "Hola, quiero reservar el paquete Más Vendido: Adultos + Almuerzo ($699 MXN) en El Gran T´Zunun.",
-  },
-  {
-    id: "vip-transporte",
-    name: "VIP + Transporte",
-    audience: "VIP Premium",
-    subtitle: "Comodidad puerta a puerta",
-    price: 999,
-    currency: "MXN",
-    unit: "persona",
-    features: [
-      "Transporte ida y vuelta",
-      "Todo incluido en actividades",
-      "Buffet maya preferente",
-      "Paquete fotográfico digital",
-    ],
-    whatsappMessage: "Hola, quiero reservar el paquete VIP + Transporte ($999 MXN) en El Gran T´Zunun.",
-  },
-];
+export const PACKAGES = PACKAGES_CATALOG;
 
 export const LODGING: LodgingOption[] = [
   {

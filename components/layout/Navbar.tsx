@@ -77,7 +77,7 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
     >
       {/* Barra Superior Institucional (Desktop) */}
       <div className="hidden lg:block bg-[#003926] text-emerald-50 border-b border-emerald-900/40">
-        <div className="max-w-[1280px] mx-auto px-6 md:px-12 py-1.5 flex items-center justify-between text-xs">
+        <div className="max-w-[1280px] mx-auto px-4 md:px-6 xl:px-8 py-1.5 flex items-center justify-between text-xs">
           <span className="text-emerald-200/90 font-medium tracking-wide">
             {t.navbar.topBarTagline}
           </span>
@@ -106,14 +106,14 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
 
       {/* Barra Principal de Secciones */}
       <div
-        className={`max-w-[1280px] mx-auto px-6 md:px-12 flex items-center justify-between gap-4 transition-all duration-300 ${
+        className={`max-w-[1280px] mx-auto px-4 md:px-6 xl:px-8 flex items-center justify-between gap-3 xl:gap-4 transition-all duration-300 ${
           isScrolled ? "py-3" : "py-3.5"
         }`}
       >
         {/* Brand Wordmark (Zone 1) */}
         <Link
           href="/"
-          className="-ml-2 flex shrink-0 items-center transition-opacity hover:opacity-90"
+          className="-ml-1 flex shrink-0 items-center transition-opacity hover:opacity-90"
         >
           <Image
             src="/images/ic_tzunun.webp"
@@ -126,14 +126,14 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
 
         {/* Clean Nav Links (Zone 2) */}
         <nav
-          className="hidden lg:flex items-center justify-center gap-4 xl:gap-6 flex-wrap"
+          className="hidden lg:flex min-w-0 flex-1 items-center justify-center gap-2 xl:gap-5"
           aria-label={t.navbar.parkSectionsAria}
         >
           {mainNavLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-xs xl:text-[13px] font-medium text-neutral-700 hover:text-[#006948] transition-colors relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#006948] hover:after:w-full after:transition-all"
+              className="text-[10px] xl:text-[13px] font-medium text-neutral-700 hover:text-[#006948] transition-colors relative py-1 whitespace-nowrap after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-[#006948] hover:after:w-full after:transition-all"
             >
               {link.label}
             </Link>
@@ -141,12 +141,12 @@ export function Navbar({ onOpenReserveModal }: NavbarProps) {
         </nav>
 
         {/* Language Switcher + Action Button (Zone 3) */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3 shrink-0">
           <LanguageSwitcher variant="light" />
           <button
             type="button"
             onClick={handleReserveClick}
-            className="px-4 xl:px-5 py-2.5 bg-[#006948] hover:bg-[#005137] text-white text-xs font-semibold rounded uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-sm hover:shadow"
+            className="px-3 xl:px-4 py-2.5 bg-[#006948] hover:bg-[#005137] text-white text-xs font-semibold rounded uppercase tracking-wider transition-all duration-200 active:scale-95 shadow-sm hover:shadow"
           >
             {t.navbar.reserveBtn}
           </button>

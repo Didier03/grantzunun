@@ -1,93 +1,116 @@
+import { Currency } from "@/types";
+import { formatMoney } from "@/lib/pricing";
+
 /**
- * WhatsApp Link Generator & Messaging Helpers
+ * WhatsApp Link Generator & Generic Messaging Helpers
  * Configured for El Gran T'Zunun Nature & Adventure Park
  */
 
 export const WHATSAPP_PHONE = "529811380060"; // Phone format without +, spaces or hyphens
 
 /**
- * Builds a direct WhatsApp web/app link with encoded text message
+ * Builds a direct WhatsApp web/app link with URI-encoded text message
  */
-export function getWhatsAppUrl(message: string, phone: string = WHATSAPP_PHONE): string {
+export function getWhatsAppUrl(
+  message: string,
+  phone: string = WHATSAPP_PHONE
+): string {
   const encoded = encodeURIComponent(message.trim());
   return `https://wa.me/${phone}?text=${encoded}`;
 }
 
-/**
- * Generates an inquiry message for a specific package
- */
-export function createPackageWhatsAppMessage(packageName: string, price: number, unit: string): string {
-  return `¡Hola! Me interesa reservar el paquete *${packageName}* ($${price} MXN / ${unit}) en El Gran T´Zunun. ¿Tienen disponibilidad y cómo puedo asegurar mis lugares?`;
+export interface ReservationWhatsAppLabels {
+  header: string;
+  nameLabel: string;
+  visitorTierLabel: string;
+  categoryLabel: string;
+  packageLabel: string;
+  guestsLabel: string;
+  dateLabel: string;
+  transportLabel: string;
+  guidedRouteLabel: string;
+  estimatedTotalLabel: string;
+  notesLabel: string;
+  footer: string;
 }
 
-/**
- * Generates an inquiry message for lodging
- */
-export function createLodgingWhatsAppMessage(lodgingTitle: string): string {
-  return `¡Hola! Quisiera consultar disponibilidad y tarifas para hospedarme en *${lodgingTitle}* en El Gran T´Zunun. ¿Qué fechas tienen disponibles?`;
-}
-
-/**
- * Generates an inquiry message for activities
- */
-export function createActivityWhatsAppMessage(activityTitle: string): string {
-  return `¡Hola! Quisiera más información sobre la actividad de *${activityTitle}* en El Gran T´Zunun (horarios, requisitos y recomendaciones).`;
-}
-
-/**
- * Generates a detailed custom quote message for WhatsApp
- */
-export function createCustomQuoteWhatsAppMessage(options: {
-  packageName?: string;
-  adults: number;
-  children: number;
+export interface ReservationWhatsAppPayload {
+  labels: ReservationWhatsAppLabels;
+  clientName?: string;
+  visitorTierText: string;
+  categoryText: string;
+  packageName: string;
+  guestsSummary: string;
   date?: string;
-  transport?: boolean;
-  name?: string;
-  totalEstimated?: number;
-  locale?: "es" | "en";
-}): string {
-  const isEn = options.locale === "en";
+  transportText?: string;
+  guidedRouteText?: string;
+  totalEstimated: number;
+  currency: Currency;
+  locale: "es" | "en";
+  notes?: string;
+}
 
-  if (isEn) {
-    let msg = `🌿 *Visit Quote - El Gran T´Zunun* 🌿\n\n`;
-    if (options.name) {
-      msg += `👤 *Name:* ${options.name}\n`;
-    }
-    if (options.packageName) {
-      msg += `🎟️ *Preferred package:* ${options.packageName}\n`;
-    }
-    msg += `👥 *Visitors:* ${options.adults} Adult(s) ${options.children > 0 ? `and ${options.children} Child(ren)` : ""}\n`;
-    if (options.date) {
-      msg += `📅 *Tentative date:* ${options.date}\n`;
-    }
-    if (options.transport) {
-      msg += `🚐 *Transport:* Yes, I need round-trip transportation\n`;
-    }
-    if (options.totalEstimated && options.totalEstimated > 0) {
-      msg += `💵 *Estimated total:* $${options.totalEstimated.toLocaleString("en-US")} MXN\n`;
-    }
-    msg += `\nCould you please confirm availability and the booking/payment process? Thank you!`;
-    return msg;
+/**
+ * Builds a structured, generic reservation/quote WhatsApp message (Open/Closed Principle).
+ * All copy/labels are injected from the active i18n dictionary.
+ */
+export function buildReservationWhatsAppMessage(
+  payload: ReservationWhatsAppPayload
+): string {
+  const {
+    labels,
+    clientName,
+    visitorTierText,
+    categoryText,
+    packageName,
+    guestsSummary,
+    date,
+    transportText,
+    guidedRouteText,
+    totalEstimated,
+    currency,
+    locale,
+    notes,
+  } = payload;
+
+  const lines: string[] = [labels.header, ""];
+
+  if (clientName && clientName.trim()) {
+    lines.push(`${labels.nameLabel} ${clientName.trim()}`);
   }
 
-  let msg = `🌿 *Cotización de Visita - El Gran T´Zunun* 🌿\n\n`;
-  if (options.name) {
-    msg += `👤 *Nombre:* ${options.name}\n`;
+  lines.push(`${labels.visitorTierLabel} ${visitorTierText}`);
+  lines.push(`${labels.categoryLabel} ${categoryText}`);
+  lines.push(`${labels.packageLabel} ${packageName}`);
+  lines.push(`${labels.guestsLabel} ${guestsSummary}`);
+
+  if (date && date.trim()) {
+    lines.push(`${labels.dateLabel} ${date.trim()}`);
   }
-  if (options.packageName) {
-    msg += `🎟️ *Paquete preferido:* ${options.packageName}\n`;
+
+  if (transportText && transportText.trim()) {
+    lines.push(`${labels.transportLabel} ${transportText.trim()}`);
   }
-  msg += `👥 *Visitantes:* ${options.adults} Adulto(s) ${options.children > 0 ? `y ${options.children} Menor(es)` : ""}\n`;
-  if (options.date) {
-    msg += `📅 *Fecha tentativa:* ${options.date}\n`;
+
+  if (guidedRouteText && guidedRouteText.trim()) {
+    lines.push(`${labels.guidedRouteLabel} ${guidedRouteText.trim()}`);
   }
-  if (options.transport) {
-    msg += `🚐 *Transporte:* Sí, requiero transporte redondo\n`;
+
+  if (totalEstimated > 0) {
+    lines.push(
+      `${labels.estimatedTotalLabel} ${formatMoney(
+        totalEstimated,
+        currency,
+        locale
+      )}`
+    );
   }
-  if (options.totalEstimated && options.totalEstimated > 0) {
-    msg += `💵 *Total estimado:* $${options.totalEstimated.toLocaleString("es-MX")} MXN\n`;
+
+  if (notes && notes.trim()) {
+    lines.push(`${labels.notesLabel} ${notes.trim()}`);
   }
-  msg += `\n¿Me podrían confirmar disponibilidad y el proceso de pago/reserva? ¡Muchas gracias!`;
-  return msg;
+
+  lines.push("", labels.footer);
+
+  return lines.join("\n");
 }
